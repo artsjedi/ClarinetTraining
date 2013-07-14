@@ -1,0 +1,671 @@
+﻿<UserControl x:Class="ClarinetTraining.Clarinet"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}" Height="689.5" Width="259">
+	<UserControl.Resources>
+		<Storyboard x:Name="NoteIn">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="h6">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="h5">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="h4">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="h3">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="h2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="h1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kr1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kc1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kl1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kl0">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kr3">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kr5">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kr4">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kl6">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kr2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kc2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kl8">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kl7">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kl10">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kl9">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kl5">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kl2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kl3">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="kl4">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.55"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="h6">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="h5">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="h4">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="h3">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="h2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="h1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kr1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kc1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kl1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kl0">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kr3">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kr5">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kr4">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kl6">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kr2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kc2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kl8">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kl7">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kl10">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kl9">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kl5">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kl2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kl3">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="kl4">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+ 
+    
+    <Grid x:Name="LayoutRoot">
+    	<VisualStateManager.VisualStateGroups>
+    		<VisualStateGroup x:Name="ClarinetRotation">
+    			<VisualStateGroup.Transitions>
+    				<VisualTransition GeneratedDuration="0:0:0.5">
+    					<VisualTransition.GeneratedEasingFunction>
+    						<CircleEase EasingMode="EaseInOut"/>
+    					</VisualTransition.GeneratedEasingFunction>
+    				</VisualTransition>
+    			</VisualStateGroup.Transitions>
+    			<VisualState x:Name="Inverted">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="180" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="Layer_1" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="Normal"/>
+    		</VisualStateGroup>
+    	</VisualStateManager.VisualStateGroups>
+    	<Viewbox Margin="0,19,0,20">
+    		<Canvas x:Name="Layer_1" RenderTransformOrigin="0.5,0.5" Tap="Layer_1_Tap" Height="700" Width="259">
+    			<Canvas.RenderTransform>
+    				<CompositeTransform/>
+    			</Canvas.RenderTransform>
+    			<Path StrokeStartLineCap="Flat" StrokeEndLineCap="Flat" StrokeThickness="2.5" StrokeMiterLimit="4" StrokeLineJoin="Miter" Width="140.757" UseLayoutRounding="False" Data="M26.3804,374 C26.3804,374 114.317,374 114.317,374 L114.31,574.476 C114.31,574.476 112.712,676.939 135.006,688.25 C135.006,688.25 144.206,695.982 135.537,701.63 L5.13964,701.63 C-3.34831,696.996 5.67011,688.25 5.67011,688.25 C27.9649,676.939 26.3734,574.476 26.3734,574.476 z M60.7158,1.5 L81.0073,1.5 C87.6455,1.5 92.1548,30.5158 95.8473,36.6176 L114.31,63.9469 L114.31,372.5 C114.31,372.5 26.373,372.5 26.3731,372.5 L26.3731,63.9469 L45.0521,36.3943 C48.989,30.827 54.0846,1.5 60.7158,1.5 z" Height="703.13" Canvas.Left="64.008" Stretch="Fill" Canvas.Top="-2.25" Fill="{StaticResource PhoneInactiveBrush}"/>
+    			<Canvas Height="671" Canvas.Left="27" Canvas.Top="9" Width="209">
+    				<Path x:Name="h6_Copy" Data="M115.5137,146.9844C116.9507,146.9844,118.1157,145.8184,118.1157,144.3804C118.1157,142.9434,116.9507,141.7774,115.5137,141.7774C114.0757,141.7774,112.9097,142.9434,112.9097,144.3804C112.9097,145.8184,114.0757,146.9844,115.5137,146.9844z" Height="40.216" Canvas.Left="86.875" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="528.244" Width="40.218" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="h5_Copy" Data="M115.5137,138.1992C116.9507,138.1992,118.1157,137.0352,118.1157,135.5972C118.1157,134.1602,116.9507,132.9942,115.5137,132.9942C114.0757,132.9942,112.9097,134.1602,112.9097,135.5972C112.9097,137.0352,114.0757,138.1992,115.5137,138.1992z" Height="40.217" Canvas.Left="86.875" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="469.374" Width="40.218" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="h4_Copy" Data="M115.5137,129.416C116.9507,129.416,118.1157,128.25,118.1157,126.812C118.1157,125.375,116.9507,124.211,115.5137,124.211C114.0757,124.211,112.9097,125.375,112.9097,126.812C112.9097,128.25,114.0757,129.416,115.5137,129.416z" Height="40.217" Canvas.Left="86.875" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="410.494" Width="40.218" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="h3_Copy" Data="M115.5137,107.7817C116.9507,107.7817,118.1157,106.6167,118.1157,105.1777C118.1157,103.7417,116.9507,102.5767,115.5137,102.5767C114.0757,102.5767,112.9097,103.7417,112.9097,105.1777C112.9097,106.6167,114.0757,107.7817,115.5137,107.7817z" Height="40.217" Canvas.Left="86.875" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="265.488" Width="40.218" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="h2_Copy" Data="M115.5137,98.9985C116.9507,98.9985,118.1157,97.8325,118.1157,96.3955C118.1157,94.9575,116.9507,93.7925,115.5137,93.7925C114.0757,93.7925,112.9097,94.9575,112.9097,96.3955C112.9097,97.8325,114.0757,98.9985,115.5137,98.9985z" Height="40.217" Canvas.Left="86.875" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="206.61" Width="40.218" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="h1_Copy" Data="M115.5137,90.2134C116.9507,90.2134,118.1157,89.0484,118.1157,87.6114C118.1157,86.1734,116.9507,85.0084,115.5137,85.0084C114.0757,85.0084,112.9097,86.1734,112.9097,87.6114C112.9097,89.0484,114.0757,90.2134,115.5137,90.2134z" Height="40.215" Canvas.Left="86.875" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="147.733" Width="40.218" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kr1_Copy" Data="M127.788,78.5967 C129.732,81.2647 129.719,81.6577 129.719,81.6577 C130.156,82.8807 129.518,84.2257 128.295,84.6627 C127.071,85.0987 125.009,84.5467 124.573,83.3237 C124.573,83.3237 124.563,82.3907 124.563,75.5817 L123.346,71.7417 C123.346,71.7417 123.522,71.2287 123.938,71.2287 C124.492,71.2287 124.817,71.8811 124.817,71.8811 C124.817,71.8811 127.788,78.5967 127.788,78.5967 z" Height="94.209" Canvas.Left="142.508" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="22.667" Width="48.427" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kc1_Copy" Data="M116.416,73.6831 C116.464,74.9314 119.793,78.8021 117.198,81.0891 C115.584,82.2531 114.067,81.0891 114.067,81.0891 C111.473,78.8021 114.712,74.8608 114.85,73.6831 C114.988,72.5054 114.301,68.3608 115.673,68.3217 C117.087,68.2814 116.368,72.4348 116.416,73.6831 z" Height="93.441" Canvas.Left="87.903" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeLineJoin="Round" Canvas.Top="35.999" Width="40.441" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl1_Copy" Data="M103.1001,85.2251C104.5381,85.2251,105.7031,84.0601,105.7031,82.6231C105.7031,81.1851,104.5381,80.0211,103.1001,80.0211C101.6631,80.0211,100.4981,81.1851,100.4981,82.6231C100.4981,84.0601,101.6631,85.2251,103.1001,85.2251z" Height="40.217" Canvas.Left="24.936" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="113.064" Width="40.217" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl0_Copy" Data="M104.003,68.6958 C104.144,69.9637 107.38,73.8138 104.786,76.1008 C103.171,77.2638 101.654,76.1008 101.654,76.1008 C99.0614,73.8138 102.347,69.7549 102.437,68.6958 C102.527,67.6367 101.927,63.1354 103.3,63.1375 C104.424,63.1392 103.862,67.4279 104.003,68.6958 z" Height="94.758" Canvas.Left="26.014" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeLineJoin="Round" Width="40.495" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kr3_Copy" Data="M128.987,118.443 C129.967,118.443 131.525,117.54 131.525,116.56 C131.525,115.579 129.967,114.892 128.987,114.892 L127.122,114.89 C124.837,115.244 124.028,117.16 123.859,117.803 C123.761,118.174 123.73,118.808 123.73,119.429 C123.703,119.484 123.88,123.248 123.88,123.248 C123.88,123.47 124.06,123.65 124.284,123.65 L124.351,123.65 C124.575,123.65 124.755,123.469 124.755,123.248 C124.755,123.248 124.859,121.156 124.882,120.988 C125.038,119.859 125.413,118.75 126.737,118.56 L128.987,118.443 z" Height="83.359" Canvas.Left="159.872" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="348.4" Width="46.388" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kr5_Copy" Data="M124.223,128.572 L124.211,134.363 C124.211,134.363 124.369,134.83 124.746,134.83 C125.248,134.83 125.291,134.326 125.291,134.326 C125.295,133.902 125.277,131.824 125.277,131.824 C125.316,128.211 127.145,125.838 127.145,125.838 C128.909,123.418 129.239,124.018 130.197,123.122 C131.155,122.226 130.013,120.792 128.904,120.398 C127.794,120.001 125.277,120.521 124.881,121.629 C124.881,121.629 124.223,122.396 124.223,128.572 z" Height="124.612" Canvas.Left="160.078" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="393.686" Width="40.295" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kr4_Copy" Data="M123.848,127.275 L123.863,134.218 C123.863,134.218 123.672,134.777 123.219,134.777 C122.618,134.777 122.568,134.173 122.568,134.173 C122.561,133.664 122.584,131.173 122.584,131.173 C122.537,126.841 120.764,124.346 120.764,124.346 C119.591,122.427 116.892,121.707 116.892,119.587 C117.009,117.868 118.531,117.348 119.943,117.348 C121.644,117.348 122.875,118.068 123.059,118.955 C123.059,118.955 123.848,119.875 123.848,127.275 z" Height="149.284" Canvas.Left="116.797" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="369.25" Width="43.611" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl6_Copy" Data="M112.4604,138.6094C113.0874,138.5914,113.6104,139.0844,113.6284,139.7114C113.6474,140.3384,113.1534,140.8614,112.5274,140.8794L108.3534,140.9004C106.8864,140.7184,106.3334,139.5074,106.2124,139.0994C106.1434,138.8674,106.1114,138.4614,106.0994,138.0624C106.0804,138.0294,106.1234,135.6214,106.1234,135.6214C106.1194,135.4764,106.2314,135.3594,106.3744,135.3554L106.4174,135.3514C106.5604,135.3494,106.6784,135.4614,106.6834,135.6034C106.6834,135.6034,106.7884,136.9394,106.8064,137.0454C106.9274,137.7634,107.1884,138.4644,108.0384,138.5624L112.4604,138.6094z" Height="40.217" Canvas.Left="41.502" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeLineJoin="Round" Canvas.Top="485.493" Width="53.622" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kr2_Copy" Data="M118.7002,99.4839C118.0742,99.4649,117.5512,99.9589,117.5322,100.5859C117.5132,101.2119,118.0082,101.7349,118.6332,101.7539L122.8062,101.7739C124.2742,101.5919,124.8282,100.3819,124.9482,99.9739C125.0172,99.7409,125.0512,99.3359,125.0602,98.9369C125.0802,98.9029,125.0372,96.4949,125.0372,96.4949C125.0412,96.3519,124.9292,96.2329,124.7872,96.2279L124.7432,96.2269C124.6012,96.2229,124.4822,96.3359,124.4782,96.4769C124.4782,96.4769,124.3722,97.8119,124.3532,97.9189C124.2332,98.6379,123.9722,99.3389,123.1222,99.4349L118.7002,99.4839z" Height="40.217" Canvas.Left="118.161" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="223.242" Width="53.624" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kc2_Copy" Data="M118.45,112.424 C119.262,112.401 121.317,112.475 121.35,113.48 C121.384,114.519 119.349,114.634 118.538,114.658 L114.061,114.68 C111.664,114.631 111.824,112.881 111.667,112.351 C111.578,112.047 111.536,111.521 111.521,111.006 C111.497,110.961 111.553,107.838 111.553,107.838 C111.547,107.653 111.693,107.499 111.877,107.494 L111.934,107.492 C112.118,107.486 112.272,107.632 112.278,107.817 C112.278,107.817 112.415,109.548 112.438,109.685 C112.594,110.618 112.932,112.237 114.034,112.362 L118.45,112.424 z" Height="77.9" Canvas.Left="113.089" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="278.023" Width="53.248" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform Rotation="-90" TranslateY="-3.4334983825683594" TranslateX="-3.4895000457763672"/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl8_Copy" Data="M106.2305,155.5332L102.5075,155.4572C101.4995,155.4862,100.6585,154.6932,100.6285,153.6852C100.5985,152.6762,101.3915,151.8362,102.3995,151.8042L106.3795,151.7712C108.7395,152.0642,109.6305,154.0102,109.8235,154.6662" Height="33.514" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="575.955" Width="67.028" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Canvas.Left="-1.875" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl7_Copy" Data="M102.5073,151.5059C101.4993,151.5369,100.6573,150.7439,100.6273,149.7349C100.5973,148.7269,101.3903,147.8849,102.3993,147.8559L106.3783,147.8219C108.7383,148.1129,109.6293,150.0609,109.8233,150.7169C109.9343,151.0939,109.9863,151.7459,110.0053,152.3869C110.0343,152.4419,109.9653,156.3179,109.9653,156.3179C109.9723,156.5469,109.7923,156.7379,109.5633,156.7439L109.4933,156.7459C109.2633,156.7519,109.0723,156.5719,109.0663,156.3439C109.0663,156.3439,108.8673,154.1989,108.8673,154.0259C108.8673,152.5649,107.5973,151.7399,106.2293,151.5839L102.5073,151.5059z" Height="67.03" Canvas.Left="6.754" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="549.477" Width="67.027" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl9_Copy" Data="M108.0903,152.5664C107.0813,152.5954,106.2403,151.8024,106.2103,150.7954C106.1803,149.7874,106.9733,148.9454,107.9813,148.9164L111.9613,148.8804C114.3213,149.1734,115.2133,151.1214,115.4063,151.7774C115.5173,152.1544,115.5693,152.8064,115.5883,153.4474C115.6173,153.5024,115.5483,155.7814,115.5483,155.7814C115.5543,156.0114,115.3753,156.2034,115.1443,156.2094L115.0753,156.2114C114.8453,156.2164,114.5093,156.0744,114.5023,155.8454C114.5023,155.8454,114.4503,155.2574,114.4503,155.0864C114.4503,153.6254,113.1803,152.7984,111.8123,152.6424L108.0903,152.5664z" Height="53.622" Canvas.Left="42.125" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="575.955" Width="67.025" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl10_Copy" Data="M108.0903,156.75C107.0813,156.779,106.2403,155.986,106.2103,154.977C106.1803,153.969,106.9733,153.127,107.9823,153.098L111.9613,153.064C114.3213,153.357,115.2133,155.303,115.4063,155.961C115.5173,156.338,115.5693,156.99,115.5883,157.629C115.6173,157.684,115.5483,161.561,115.5483,161.561C115.5543,161.789,115.3753,161.98,115.1443,161.988L115.0753,161.99C114.8453,161.996,114.6553,161.816,114.6483,161.586C114.6483,161.586,114.4503,159.441,114.4503,159.268C114.4503,157.807,113.1803,156.982,111.8123,156.826L108.0903,156.75z" Height="67.029" Canvas.Left="42.125" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="603.225" Width="67.025" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl5_Copy" Data="M97.7412,114.727 L97.7412,121.063 C97.7412,122.991 99.9642,124.459 103.21,124.459 C106.457,124.459 108.038,123.428 108.038,122.159 C108.038,120.889 106.457,119.709 103.21,119.709 L101.191,119.87 C99.5712,120.049 99.0857,118.624 99.0857,118.624 L99.0857,114.651 C99.0857,114.651 98.9196,113.857 98.4397,113.876 C97.7598,113.903 97.7412,114.727 97.7412,114.727 z" Height="68.214" Canvas.Left="14.868" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeLineJoin="Round" Canvas.Top="359.717" Width="49.273" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform ScaleX="-1"/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl3_Copy" Data="M97.7412,114.727 L97.7412,121.063 C97.7412,122.991 99.9642,124.459 103.21,124.459 C106.457,124.459 108.038,123.428 108.038,122.159 C108.038,120.889 106.457,119.709 103.21,119.709 L101.191,119.87 C99.5712,120.049 99.7228,118.521 99.7228,118.521 L99.7228,114.548 C99.7228,114.548 99.2555,113.625 98.7756,113.644 C98.0957,113.671 97.7412,114.727 97.7412,114.727 z" Height="69.62" Canvas.Left="9.017" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeLineJoin="Round" Canvas.Top="301.732" Width="46.125" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform ScaleX="-1"/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl2_Copy" Data="M97.7412,114.727 L97.7412,121.063 C97.7412,122.991 99.9642,124.459 103.21,124.459 C106.457,124.459 108.038,123.428 108.038,122.159 C108.038,120.889 106.457,119.709 103.21,119.709 L101.191,119.87 C99.5712,120.049 99.8506,118.706 99.8506,118.706 L99.8506,114.733 C99.8506,114.733 99.2611,113.564 98.7812,113.583 C98.1013,113.61 97.7412,114.727 97.7412,114.727 z" Height="69.995" Canvas.Left="8.916" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeLineJoin="Round" Canvas.Top="278.137" Width="46.125" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform ScaleX="-1"/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl4_Copy" Data="M97.7412,114.727 L97.7412,121.063 C97.7412,122.991 99.9642,124.459 103.21,124.459 C106.457,124.459 108.038,123.428 108.038,122.159 C108.038,120.889 106.457,119.709 103.21,119.709 L101.191,119.87 C99.5712,120.049 99.6897,118.665 99.6897,118.665 L99.6897,114.692 C99.6897,114.692 99.2599,113.682 98.78,113.701 C98.1001,113.728 97.7412,114.727 97.7412,114.727 z" Height="69.276" Canvas.Left="14.868" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeLineJoin="Round" Canvas.Top="335.095" Width="49.273" UseLayoutRounding="False" StrokeThickness="2.5" RenderTransformOrigin="0.5,0.5" Stroke="{StaticResource PhoneDisabledBrush}" Fill="{StaticResource PhoneBackgroundBrush}">
+    					<Path.RenderTransform>
+    						<CompositeTransform ScaleX="-1"/>
+    					</Path.RenderTransform>
+    				</Path>
+    			</Canvas>
+    			<Canvas Height="671" Canvas.Left="27" Canvas.Top="9" Width="209">
+    				<Path x:Name="h6" Data="M115.5137,146.9844C116.9507,146.9844,118.1157,145.8184,118.1157,144.3804C118.1157,142.9434,116.9507,141.7774,115.5137,141.7774C114.0757,141.7774,112.9097,142.9434,112.9097,144.3804C112.9097,145.8184,114.0757,146.9844,115.5137,146.9844z" Fill="{StaticResource PhoneForegroundBrush}" Height="40.216" Canvas.Left="86.875" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="528.244" Width="40.218" UseLayoutRounding="False" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="h5" Data="M115.5137,138.1992C116.9507,138.1992,118.1157,137.0352,118.1157,135.5972C118.1157,134.1602,116.9507,132.9942,115.5137,132.9942C114.0757,132.9942,112.9097,134.1602,112.9097,135.5972C112.9097,137.0352,114.0757,138.1992,115.5137,138.1992z" Fill="{StaticResource PhoneForegroundBrush}" Height="40.217" Canvas.Left="86.875" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="469.374" Width="40.218" UseLayoutRounding="False" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="h4" Data="M115.5137,129.416C116.9507,129.416,118.1157,128.25,118.1157,126.812C118.1157,125.375,116.9507,124.211,115.5137,124.211C114.0757,124.211,112.9097,125.375,112.9097,126.812C112.9097,128.25,114.0757,129.416,115.5137,129.416z" Fill="{StaticResource PhoneForegroundBrush}" Height="40.217" Canvas.Left="86.875" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="410.494" Width="40.218" UseLayoutRounding="False" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="h3" Data="M115.5137,107.7817C116.9507,107.7817,118.1157,106.6167,118.1157,105.1777C118.1157,103.7417,116.9507,102.5767,115.5137,102.5767C114.0757,102.5767,112.9097,103.7417,112.9097,105.1777C112.9097,106.6167,114.0757,107.7817,115.5137,107.7817z" Fill="{StaticResource PhoneForegroundBrush}" Height="40.217" Canvas.Left="86.875" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="265.488" Width="40.218" UseLayoutRounding="False" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="h2" Data="M115.5137,98.9985C116.9507,98.9985,118.1157,97.8325,118.1157,96.3955C118.1157,94.9575,116.9507,93.7925,115.5137,93.7925C114.0757,93.7925,112.9097,94.9575,112.9097,96.3955C112.9097,97.8325,114.0757,98.9985,115.5137,98.9985z" Fill="{StaticResource PhoneForegroundBrush}" Height="40.217" Canvas.Left="86.875" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="206.61" Width="40.218" UseLayoutRounding="False" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="h1" Data="M115.5137,90.2134C116.9507,90.2134,118.1157,89.0484,118.1157,87.6114C118.1157,86.1734,116.9507,85.0084,115.5137,85.0084C114.0757,85.0084,112.9097,86.1734,112.9097,87.6114C112.9097,89.0484,114.0757,90.2134,115.5137,90.2134z" Fill="{StaticResource PhoneForegroundBrush}" Height="40.215" Canvas.Left="86.875" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="147.733" Width="40.218" UseLayoutRounding="False" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kr1" Data="M127.788,78.5967 C129.732,81.2647 129.719,81.6577 129.719,81.6577 C130.156,82.8807 129.518,84.2257 128.295,84.6627 C127.071,85.0987 125.009,84.5467 124.573,83.3237 C124.573,83.3237 124.563,82.3907 124.563,75.5817 L123.346,71.7417 C123.346,71.7417 123.522,71.2287 123.938,71.2287 C124.492,71.2287 124.817,71.8811 124.817,71.8811 C124.817,71.8811 127.788,78.5967 127.788,78.5967 z" Height="94.209" Canvas.Left="141.425" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="24.667" Width="48.427" Fill="{StaticResource PhoneForegroundBrush}" Stroke="{StaticResource PhoneForegroundBrush}" UseLayoutRounding="False" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kc1" Data="M116.416,73.6831 C116.464,74.9314 119.793,78.8021 117.198,81.0891 C115.584,82.2531 114.067,81.0891 114.067,81.0891 C111.473,78.8021 114.712,74.8608 114.85,73.6831 C114.988,72.5054 114.301,68.3608 115.673,68.3217 C117.087,68.2814 116.368,72.4348 116.416,73.6831 z" Height="93.441" Canvas.Left="87.903" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeLineJoin="Round" Canvas.Top="35.999" Width="40.441" Fill="{StaticResource PhoneForegroundBrush}" Stroke="{StaticResource PhoneForegroundBrush}" UseLayoutRounding="False" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl1" Data="M103.1001,85.2251C104.5381,85.2251,105.7031,84.0601,105.7031,82.6231C105.7031,81.1851,104.5381,80.0211,103.1001,80.0211C101.6631,80.0211,100.4981,81.1851,100.4981,82.6231C100.4981,84.0601,101.6631,85.2251,103.1001,85.2251z" Fill="{StaticResource PhoneForegroundBrush}" Height="40.217" Canvas.Left="24.936" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" Stroke="{StaticResource PhoneForegroundBrush}" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="113.064" Width="40.217" UseLayoutRounding="False" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl0" Data="M104.003,68.6958 C104.144,69.9637 107.38,73.8138 104.786,76.1008 C103.171,77.2638 101.654,76.1008 101.654,76.1008 C99.0614,73.8138 102.347,69.7549 102.437,68.6958 C102.527,67.6367 101.927,63.1354 103.3,63.1375 C104.424,63.1392 103.862,67.4279 104.003,68.6958 z" Height="94.758" Canvas.Left="26.014" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeLineJoin="Round" Width="40.495" Fill="{StaticResource PhoneForegroundBrush}" Stroke="{StaticResource PhoneForegroundBrush}" UseLayoutRounding="False" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kr3" Data="M128.987,118.443 C129.967,118.443 131.525,117.54 131.525,116.56 C131.525,115.579 129.967,114.892 128.987,114.892 L127.122,114.89 C124.837,115.244 124.028,117.16 123.859,117.803 C123.761,118.174 123.73,118.808 123.73,119.429 C123.703,119.484 123.88,123.248 123.88,123.248 C123.88,123.47 124.06,123.65 124.284,123.65 L124.351,123.65 C124.575,123.65 124.755,123.469 124.755,123.248 C124.755,123.248 124.859,121.156 124.882,120.988 C125.038,119.859 125.413,118.75 126.737,118.56 L128.987,118.443 z" Height="83.359" Canvas.Left="161.04" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="348.4" Width="46.388" Fill="{StaticResource PhoneForegroundBrush}" Stroke="{StaticResource PhoneForegroundBrush}" UseLayoutRounding="False" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kr5" Data="M124.223,128.572 L124.211,134.363 C124.211,134.363 124.369,134.83 124.746,134.83 C125.248,134.83 125.291,134.326 125.291,134.326 C125.295,133.902 125.277,131.824 125.277,131.824 C125.316,128.211 127.145,125.838 127.145,125.838 C128.909,123.418 129.239,124.018 130.197,123.122 C131.155,122.226 130.013,120.792 128.904,120.398 C127.794,120.001 125.277,120.521 124.881,121.629 C124.881,121.629 124.223,122.396 124.223,128.572 z" Height="124.612" Canvas.Left="161.246" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="393.686" Width="40.295" Stroke="{StaticResource PhoneForegroundBrush}" UseLayoutRounding="False" StrokeThickness="4" Fill="{StaticResource PhoneForegroundBrush}" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kr4" Data="M123.848,127.275 L123.863,134.218 C123.863,134.218 123.672,134.777 123.219,134.777 C122.618,134.777 122.568,134.173 122.568,134.173 C122.561,133.664 122.584,131.173 122.584,131.173 C122.537,126.841 120.764,124.346 120.764,124.346 C119.591,122.427 116.892,121.707 116.892,119.587 C117.009,117.868 118.531,117.348 119.943,117.348 C121.644,117.348 122.875,118.068 123.059,118.955 C123.059,118.955 123.848,119.875 123.848,127.275 z" Fill="{StaticResource PhoneForegroundBrush}" Height="149.284" Canvas.Left="117.161" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="369.014" Width="43.611" UseLayoutRounding="False" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl6" Data="M112.4604,138.6094C113.0874,138.5914,113.6104,139.0844,113.6284,139.7114C113.6474,140.3384,113.1534,140.8614,112.5274,140.8794L108.3534,140.9004C106.8864,140.7184,106.3334,139.5074,106.2124,139.0994C106.1434,138.8674,106.1114,138.4614,106.0994,138.0624C106.0804,138.0294,106.1234,135.6214,106.1234,135.6214C106.1194,135.4764,106.2314,135.3594,106.3744,135.3554L106.4174,135.3514C106.5604,135.3494,106.6784,135.4614,106.6834,135.6034C106.6834,135.6034,106.7884,136.9394,106.8064,137.0454C106.9274,137.7634,107.1884,138.4644,108.0384,138.5624L112.4604,138.6094z" Fill="{StaticResource PhoneForegroundBrush}" Height="40.217" Canvas.Left="41.502" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeLineJoin="Round" Canvas.Top="485.493" Width="53.622" Stroke="{StaticResource PhoneForegroundBrush}" UseLayoutRounding="False" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kr2" Data="M118.7002,99.4839C118.0742,99.4649,117.5512,99.9589,117.5322,100.5859C117.5132,101.2119,118.0082,101.7349,118.6332,101.7539L122.8062,101.7739C124.2742,101.5919,124.8282,100.3819,124.9482,99.9739C125.0172,99.7409,125.0512,99.3359,125.0602,98.9369C125.0802,98.9029,125.0372,96.4949,125.0372,96.4949C125.0412,96.3519,124.9292,96.2329,124.7872,96.2279L124.7432,96.2269C124.6012,96.2229,124.4822,96.3359,124.4782,96.4769C124.4782,96.4769,124.3722,97.8119,124.3532,97.9189C124.2332,98.6379,123.9722,99.3389,123.1222,99.4349L118.7002,99.4839z" Height="40.217" Canvas.Left="118.161" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="223.242" Width="53.624" Fill="{StaticResource PhoneForegroundBrush}" Stroke="{StaticResource PhoneForegroundBrush}" UseLayoutRounding="False" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kc2" Data="M118.45,112.424 C119.262,112.401 121.317,112.475 121.35,113.48 C121.384,114.519 119.349,114.634 118.538,114.658 L114.061,114.68 C111.664,114.631 111.824,112.881 111.667,112.351 C111.578,112.047 111.536,111.521 111.521,111.006 C111.497,110.961 111.553,107.838 111.553,107.838 C111.547,107.653 111.693,107.499 111.877,107.494 L111.934,107.492 C112.118,107.486 112.272,107.632 112.278,107.817 C112.278,107.817 112.415,109.548 112.438,109.685 C112.594,110.618 112.932,112.237 114.034,112.362 L118.45,112.424 z" Height="77.9" Canvas.Left="113.089" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="278.023" Width="53.248" Fill="{StaticResource PhoneForegroundBrush}" Stroke="{StaticResource PhoneForegroundBrush}" UseLayoutRounding="False" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform Rotation="-90" TranslateY="-3.4334983825683594" TranslateX="-3.4895000457763672"/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl8" Data="M106.2305,155.5332L102.5075,155.4572C101.4995,155.4862,100.6585,154.6932,100.6285,153.6852C100.5985,152.6762,101.3915,151.8362,102.3995,151.8042L106.3795,151.7712C108.7395,152.0642,109.6305,154.0102,109.8235,154.6662" Height="33.514" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="575.955" Width="67.028" Fill="{StaticResource PhoneForegroundBrush}" Stroke="{StaticResource PhoneForegroundBrush}" UseLayoutRounding="False" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Canvas.Left="-0.519" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl7" Data="M102.5073,151.5059C101.4993,151.5369,100.6573,150.7439,100.6273,149.7349C100.5973,148.7269,101.3903,147.8849,102.3993,147.8559L106.3783,147.8219C108.7383,148.1129,109.6293,150.0609,109.8233,150.7169C109.9343,151.0939,109.9863,151.7459,110.0053,152.3869C110.0343,152.4419,109.9653,156.3179,109.9653,156.3179C109.9723,156.5469,109.7923,156.7379,109.5633,156.7439L109.4933,156.7459C109.2633,156.7519,109.0723,156.5719,109.0663,156.3439C109.0663,156.3439,108.8673,154.1989,108.8673,154.0259C108.8673,152.5649,107.5973,151.7399,106.2293,151.5839L102.5073,151.5059z" Height="67.03" Canvas.Left="7.202" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="550.873" Width="67.027" Fill="{StaticResource PhoneForegroundBrush}" Stroke="{StaticResource PhoneForegroundBrush}" UseLayoutRounding="False" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl10" Data="M108.0903,156.75C107.0813,156.779,106.2403,155.986,106.2103,154.977C106.1803,153.969,106.9733,153.127,107.9823,153.098L111.9613,153.064C114.3213,153.357,115.2133,155.303,115.4063,155.961C115.5173,156.338,115.5693,156.99,115.5883,157.629C115.6173,157.684,115.5483,161.561,115.5483,161.561C115.5543,161.789,115.3753,161.98,115.1443,161.988L115.0753,161.99C114.8453,161.996,114.6553,161.816,114.6483,161.586C114.6483,161.586,114.4503,159.441,114.4503,159.268C114.4503,157.807,113.1803,156.982,111.8123,156.826L108.0903,156.75z" Fill="{StaticResource PhoneForegroundBrush}" Height="67.029" Canvas.Left="42.125" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="603.892" Width="67.025" UseLayoutRounding="False" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl9" Data="M108.0903,152.5664C107.0813,152.5954,106.2403,151.8024,106.2103,150.7954C106.1803,149.7874,106.9733,148.9454,107.9813,148.9164L111.9613,148.8804C114.3213,149.1734,115.2133,151.1214,115.4063,151.7774C115.5173,152.1544,115.5693,152.8064,115.5883,153.4474C115.6173,153.5024,115.5483,155.7814,115.5483,155.7814C115.5543,156.0114,115.3753,156.2034,115.1443,156.2094L115.0753,156.2114C114.8453,156.2164,114.5093,156.0744,114.5023,155.8454C114.5023,155.8454,114.4503,155.2574,114.4503,155.0864C114.4503,153.6254,113.1803,152.7984,111.8123,152.6424L108.0903,152.5664z" Height="53.622" Canvas.Left="42.125" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeMiterLimit="4" StrokeLineJoin="Miter" Canvas.Top="575.955" Width="67.025" Fill="{StaticResource PhoneForegroundBrush}" Stroke="{StaticResource PhoneForegroundBrush}" UseLayoutRounding="False" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl5" Data="M97.7412,114.727 L97.7412,121.063 C97.7412,122.991 99.9642,124.459 103.21,124.459 C106.457,124.459 108.038,123.428 108.038,122.159 C108.038,120.889 106.457,119.709 103.21,119.709 L101.191,119.87 C99.5712,120.049 99.0857,118.624 99.0857,118.624 L99.0857,114.651 C99.0857,114.651 98.9196,113.857 98.4397,113.876 C97.7598,113.903 97.7412,114.727 97.7412,114.727 z" Height="68.214" Canvas.Left="15.885" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeLineJoin="Round" Canvas.Top="361.718" Width="49.273" Fill="{StaticResource PhoneForegroundBrush}" Stroke="{StaticResource PhoneForegroundBrush}" UseLayoutRounding="False" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform ScaleX="-1"/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl2" Data="M97.7412,114.727 L97.7412,121.063 C97.7412,122.991 99.9642,124.459 103.21,124.459 C106.457,124.459 108.038,123.428 108.038,122.159 C108.038,120.889 106.457,119.709 103.21,119.709 L101.191,119.87 C99.5712,120.049 99.0857,118.624 99.0857,118.624 L99.0857,114.651 C99.0857,114.651 98.9196,113.857 98.4397,113.876 C97.7598,113.903 97.7412,114.727 97.7412,114.727 z" Height="68.214" Canvas.Left="8.286" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeLineJoin="Round" Canvas.Top="279.301" Width="46.125" Fill="{StaticResource PhoneForegroundBrush}" Stroke="{StaticResource PhoneForegroundBrush}" UseLayoutRounding="False" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform ScaleX="-1"/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl3" Data="M97.7412,114.727 L97.7412,121.063 C97.7412,122.991 99.9642,124.459 103.21,124.459 C106.457,124.459 108.038,123.428 108.038,122.159 C108.038,120.889 106.457,119.709 103.21,119.709 L101.191,119.87 C99.5712,120.049 99.0857,118.624 99.0857,118.624 L99.0857,114.651 C99.0857,114.651 98.9196,113.857 98.4397,113.876 C97.7598,113.903 97.7412,114.727 97.7412,114.727 z" Height="68.214" Canvas.Left="8.638" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeLineJoin="Round" Canvas.Top="302.634" Width="46.125" Fill="{StaticResource PhoneForegroundBrush}" Stroke="{StaticResource PhoneForegroundBrush}" UseLayoutRounding="False" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform ScaleX="-1"/>
+    					</Path.RenderTransform>
+    				</Path>
+    				<Path x:Name="kl4" Data="M97.7412,114.727 L97.7412,121.063 C97.7412,122.991 99.9642,124.459 103.21,124.459 C106.457,124.459 108.038,123.428 108.038,122.159 C108.038,120.889 106.457,119.709 103.21,119.709 L101.191,119.87 C99.5712,120.049 99.0857,118.624 99.0857,118.624 L99.0857,114.651 C99.0857,114.651 98.9196,113.857 98.4397,113.876 C97.7598,113.903 97.7412,114.727 97.7412,114.727 z" Height="68.214" Canvas.Left="15.885" StrokeStartLineCap="Round" Stretch="Fill" StrokeEndLineCap="Round" StrokeLineJoin="Round" Canvas.Top="337.468" Width="49.273" Fill="{StaticResource PhoneForegroundBrush}" Stroke="{StaticResource PhoneForegroundBrush}" UseLayoutRounding="False" StrokeThickness="4" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+    					<Path.RenderTransform>
+    						<CompositeTransform ScaleX="-1"/>
+    					</Path.RenderTransform>
+    				</Path>
+    			</Canvas>
+    		</Canvas>
+    	</Viewbox>
+    </Grid>
+</UserControl>
