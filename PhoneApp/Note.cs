@@ -9,7 +9,7 @@ namespace ClarinetTraining
     public class Note
     {
         public int note;
-        public int scale;
+        public int octave;
         public bool sus;
         public bool bmol;
 
@@ -29,14 +29,14 @@ namespace ClarinetTraining
             this.note = note;
             this.sus = sus;
             this.bmol = bmol;
-            this.scale = scale;
+            this.octave = scale;
         }
 
 
         public string ToString(string format)
         {
 
-            return notesKey[note] + (sus ? "#" : "") + (bmol ? "b" : "") + (scale+1).ToString() ;
+            return notesKey[note] + (sus ? "#" : "") + (bmol ? "b" : "") + (octave+1).ToString() ;
 
         }
         public override string ToString()
@@ -48,7 +48,7 @@ namespace ClarinetTraining
 
         public Note normalize()
         {
-            var n = new Note(note, sus, bmol, scale);
+            var n = new Note(note, sus, bmol, octave);
 
             if (n.bmol)
             {
@@ -59,7 +59,7 @@ namespace ClarinetTraining
                 if (n.note < 0)
                 {
                     n.note = 6;
-                    n.scale--;
+                    n.octave--;
                 }
             }
 
@@ -72,7 +72,7 @@ namespace ClarinetTraining
             {
                 n.note = 0;
                 n.sus = false;
-                n.scale++;
+                n.octave++;
             }
 
             return n;

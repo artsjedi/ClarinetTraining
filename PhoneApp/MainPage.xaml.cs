@@ -27,7 +27,7 @@ namespace ClarinetTraining
         bool soundOn = true;
         ClarinetSound sound;
 
-		private int[] harmonicIntervals = new int[] { 2, 2, 1, 2, 2, 2, 1 };
+        private int[] harmonicIntervals = new int[] { 0, 2, 2, 1, 2, 2, 02, 01 };
         private int[] harmonicDistances = new int[] { 0, 2, 4, 5, 7, 9, 11, 12 };
             
         private int[] chromaticNot = new int[] { 0, 0, 1, 1, 2, 3, 3, 4, 4, 5, 5, 6 };
@@ -37,7 +37,7 @@ namespace ClarinetTraining
         private string[] scalesNames = { "C maj", "D maj", "E maj", "F maj", "G maj", "A maj", "B maj" };
         private string[] intervalsText = { "1/2 s", "1s", "2s", "4s", "8s", "16s"};
 
-        private int[] intervalsValues = { 500, 1000, 2000, 3000, 5000, 7000, 15000, 30000 };
+        private int[] intervalsValues = { 250, 500, 1000, 2000, 3000, 5000, 7000, 15000, 30000 };
 
         private Random rnd = new Random();
 
@@ -78,13 +78,72 @@ namespace ClarinetTraining
             sheet.hideNote();
         }
 
+        /// <summary>
+        /// Shows a note 
+        /// </summary>
+        /// <param name="n"></param>
+        private void displayNote(Note n)
+        {
+
+            sheet.showNote(n);
+            if (!clarinet.showNote(n)) tick(null, null);
+            if (soundOn) sound.playNote(n);
+        }
+       
+        /// <summary>
+        /// timer tick
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tick(Object sender, EventArgs e){
             var n = randomNote(currentScale, currentUpper, currentLower);
             displayNote(n);
             
         }
 
+        /////////////////////////////////////////////////// this below shoud be in another class /////////
+        
+        /// <summary>
+        /// sets the Current scale
+        /// </summary>
+        /// <param name="scale"></param>
+        private void setScale(int scale)
+        {
+            
+            this.currentScale = scale;
+            if (sheet == null) return;
+            sheet.setScale(scale);
+        }
 
+        /// <summary>
+        /// Get the variant note in a specific scale.
+        /// </summary>
+        /// <param name="scale">Scale</param>
+        /// <param name="note">Notes</param>
+        /// <returns>Return a new Note and if it is Bmol or Sustenide</returns>
+        private Note getNoteVariantOnScale(int scale, int note)
+        {
+            var n = new Note();
+
+            var newNote = (note + scale) % 7;
+            var chromaticId = (harmonicDistances[scale] + harmonicDistances[note]) % 12;
+            var diff = chromaticId - harmonicDistances[newNote];
+
+            n.note = newNote;
+
+            if (diff == 1) n.sus = true;
+            if (diff == -1) n.bmol = true;
+
+            return n;
+        }
+
+        /// <summary>
+        /// Select a random note in a scale(or not)
+        /// </summary>
+        /// <param name="scale">Scale</param>
+        /// <param name="upper">upper limit</param>
+        /// <param name="lower">lower limit</param>
+        /// <returns>a rando note according with parameters.</returns>
         private Note randomNote(int scale=-1,int upper=29, int lower=2){
             var n = new Note();
 
@@ -92,11 +151,9 @@ namespace ClarinetTraining
             //harmonic Scale
             if (scale <=6 )
             {
-
-                var chromaticId = (harmonicDistances[scale] + harmonicDistances[rnd.Next(7)]) % 12;
-                n.note = chromaticNot[chromaticId];
-                n.sus = chromaticSus[chromaticId]==1;
-                n.scale = rnd.Next(4);
+                var note = rnd.Next(7);
+                n = getNoteVariantOnScale(scale, note);
+                n.octave = rnd.Next(4);
 
             }
             //Any Scale
@@ -104,7 +161,7 @@ namespace ClarinetTraining
             {
 
                 n.note = rnd.Next(7);
-                n.scale = rnd.Next(4);
+                n.octave = rnd.Next(4);
                 var sus = rnd.Next(6);
 
                 switch (sus)
@@ -113,23 +170,18 @@ namespace ClarinetTraining
                     case 1: n.bmol = true; break;
                 }
 
-                System.Diagnostics.Debug.WriteLine("n:" + n.note + " s:" + n.scale);
+                //System.Diagnostics.Debug.WriteLine("n:" + n.note + " s:" + n.scale);
                 
             }
 
             //limit-it
-            while (n.note + n.scale * 7 > upper) n.scale--;
-            while (n.note + n.scale * 7 < lower) n.scale++;
+            while (n.note + n.octave * 7 > upper) n.octave--;
+            while (n.note + n.octave * 7 < lower) n.octave++;
           
             return n;
         }
         
-        private void displayNote(Note n){
-            
-            sheet.showNote(n);
-            if(!clarinet.showNote(n))tick(null, null);
-            if(soundOn)sound.playNote(n);
-        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         #region callbacks
 
@@ -146,9 +198,6 @@ namespace ClarinetTraining
 		private void hideLists(){
             try
             {
-                //listsBackground.Visibility = System.Windows.Visibility.Collapsed;
-                //ScaleList.Visibility = System.Windows.Visibility.Collapsed;
-                //IntervalList.Visibility = System.Windows.Visibility.Collapsed;
                 CloseList.Begin();
                 ApplicationBar.IsVisible = true;
             }
@@ -156,11 +205,6 @@ namespace ClarinetTraining
             {
             }
 		}
-
-        private void showLists()
-        {
-
-        }
 
         private void ScaleButton_Click(object sender, System.EventArgs e)
         {
@@ -179,7 +223,6 @@ namespace ClarinetTraining
             IntervalList.Visibility = System.Windows.Visibility.Visible;
             OpenList.Begin();
         }
-
 
         private void RangeButton_Click(object sender, System.EventArgs e)
         {
@@ -202,7 +245,7 @@ namespace ClarinetTraining
         {
 
             var i = (sender as ListBox).SelectedIndex;
-            currentScale = i;
+            setScale(i);
         	hideLists();
         }
 
@@ -239,39 +282,38 @@ namespace ClarinetTraining
             base.OnBackKeyPress(e);
         }
 
-        private void Button_Click_1(object sender, System.Windows.RoutedEventArgs e)
-        {
-        	
-        }
-
-        #endregion
-
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
 
             playing = !playing;
             if (playing)
             {
-                 startShowing();
+                startShowing();
 
-                 PlaySymbol.Visibility = System.Windows.Visibility.Collapsed;
-                 PauseSymbol1.Visibility = System.Windows.Visibility.Visible;
-    
+                PlaySymbol.Visibility = System.Windows.Visibility.Collapsed;
+                PauseSymbol1.Visibility = System.Windows.Visibility.Visible;
+
             }
             else
             {
                 stopShowing();
                 PlaySymbol.Visibility = System.Windows.Visibility.Visible;
                 PauseSymbol1.Visibility = System.Windows.Visibility.Collapsed;
-               
+
             }
         }
 
+
+        /// Menus ///////////////////////////////////////////////////////////////////////////////
+        
         private void ApplicationBarMenuItem_Click_1(object sender, System.EventArgs e)
         {
             var uri = new Uri("/Dictionary.xaml", UriKind.Relative);
             NavigationService.Navigate(uri);
-				
+
         }
+        #endregion
+
+ 
     }
 }

@@ -12,269 +12,265 @@
 	SupportedOrientations="Portrait" Orientation="Portrait"
 	shell:SystemTray.IsVisible="True"
     local:TiltEffect.IsTiltEnabled="True">
-	<phone:PhoneApplicationPage.Resources>
-		<Storyboard x:Name="OpenList">
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="ScaleList">
-				<EasingDoubleKeyFrame KeyTime="0" Value="90"/>
-				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<CubicEase EasingMode="EaseOut"/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-			</DoubleAnimationUsingKeyFrames>
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="IntervalList">
-				<EasingDoubleKeyFrame KeyTime="0" Value="90"/>
-				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<CubicEase EasingMode="EaseOut"/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-			</DoubleAnimationUsingKeyFrames>
-			
-			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="listsBackground">
-				<DiscreteObjectKeyFrame KeyTime="0">
-					<DiscreteObjectKeyFrame.Value>
-						<Visibility>Collapsed</Visibility>
-					</DiscreteObjectKeyFrame.Value>
-				</DiscreteObjectKeyFrame>
-			</ObjectAnimationUsingKeyFrames>
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="listsBackground">
-				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
-			</DoubleAnimationUsingKeyFrames>
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="RangeList">
-				<EasingDoubleKeyFrame KeyTime="0" Value="90"/>
-				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<CubicEase EasingMode="EaseOut"/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-			</DoubleAnimationUsingKeyFrames>
-		</Storyboard>
-		<Storyboard x:Name="CloseList">
-			<DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="ScaleList" d:IsOptimized="True">
-				<DoubleAnimation.EasingFunction>
-					<CubicEase EasingMode="EaseOut"/>
-				</DoubleAnimation.EasingFunction>
-			</DoubleAnimation>
-			<DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="IntervalList" d:IsOptimized="True">
-				<DoubleAnimation.EasingFunction>
-					<CubicEase EasingMode="EaseOut"/>
-				</DoubleAnimation.EasingFunction>
-			</DoubleAnimation>
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="ScaleList">
-				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="90">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<CubicEase EasingMode="EaseOut"/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-			</DoubleAnimationUsingKeyFrames>
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="IntervalList">
-				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="90">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<CubicEase EasingMode="EaseOut"/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-			</DoubleAnimationUsingKeyFrames>
-			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ScaleList">
-				<DiscreteObjectKeyFrame KeyTime="0">
-					<DiscreteObjectKeyFrame.Value>
-						<Visibility>Visible</Visibility>
-					</DiscreteObjectKeyFrame.Value>
-				</DiscreteObjectKeyFrame>
-				<DiscreteObjectKeyFrame KeyTime="0:0:0.2">
-					<DiscreteObjectKeyFrame.Value>
-						<Visibility>Collapsed</Visibility>
-					</DiscreteObjectKeyFrame.Value>
-				</DiscreteObjectKeyFrame>
-			</ObjectAnimationUsingKeyFrames>
-			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="IntervalList">
-				<DiscreteObjectKeyFrame KeyTime="0">
-					<DiscreteObjectKeyFrame.Value>
-						<Visibility>Visible</Visibility>
-					</DiscreteObjectKeyFrame.Value>
-				</DiscreteObjectKeyFrame>
-				<DiscreteObjectKeyFrame KeyTime="0:0:0.2">
-					<DiscreteObjectKeyFrame.Value>
-						<Visibility>Collapsed</Visibility>
-					</DiscreteObjectKeyFrame.Value>
-				</DiscreteObjectKeyFrame>
-			</ObjectAnimationUsingKeyFrames>
-			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="listsBackground">
-				<DiscreteObjectKeyFrame KeyTime="0:0:0.2">
-					<DiscreteObjectKeyFrame.Value>
-						<Visibility>Collapsed</Visibility>
-					</DiscreteObjectKeyFrame.Value>
-				</DiscreteObjectKeyFrame>
-			</ObjectAnimationUsingKeyFrames>
-			<DoubleAnimation Duration="0:0:0.2" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="listsBackground" d:IsOptimized="True"/>
-			<DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="RangeList" d:IsOptimized="True">
-				<DoubleAnimation.EasingFunction>
-					<CubicEase EasingMode="EaseOut"/>
-				</DoubleAnimation.EasingFunction>
-			</DoubleAnimation>
-	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="RangeList">
-		<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-		<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="90">
-			<EasingDoubleKeyFrame.EasingFunction>
-				<CubicEase EasingMode="EaseOut"/>
-			</EasingDoubleKeyFrame.EasingFunction>
-		</EasingDoubleKeyFrame>
-	</DoubleAnimationUsingKeyFrames>
-	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="RangeList">
-		<DiscreteObjectKeyFrame KeyTime="0">
-			<DiscreteObjectKeyFrame.Value>
-				<Visibility>Visible</Visibility>
-			</DiscreteObjectKeyFrame.Value>
-		</DiscreteObjectKeyFrame>
-		<DiscreteObjectKeyFrame KeyTime="0:0:0.2">
-			<DiscreteObjectKeyFrame.Value>
-				<Visibility>Collapsed</Visibility>
-			</DiscreteObjectKeyFrame.Value>
-		</DiscreteObjectKeyFrame>
-	</ObjectAnimationUsingKeyFrames>
-		</Storyboard>
-		<Style x:Key="RoundButton" TargetType="Button">
-			<Setter Property="Background" Value="Transparent"/>
-			<Setter Property="BorderBrush" Value="{StaticResource PhoneForegroundBrush}"/>
-			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
-			<Setter Property="BorderThickness" Value="{StaticResource PhoneBorderThickness}"/>
-			<Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiBold}"/>
-			<Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMediumLarge}"/>
-			<Setter Property="Padding" Value="10,3,10,5"/>
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="Button">
-						<Grid Background="Transparent">
-							<VisualStateManager.VisualStateGroups>
-								<VisualStateGroup x:Name="CommonStates">
-									<VisualState x:Name="Normal"/>
-									<VisualState x:Name="MouseOver"/>
-									<VisualState x:Name="Pressed">
-										<Storyboard>
-											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentContainer">
-												<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneBackgroundBrush}"/>
-											</ObjectAnimationUsingKeyFrames>
-											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="ButtonBackground">
-												<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneForegroundBrush}"/>
-											</ObjectAnimationUsingKeyFrames>
-											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ButtonBackground">
-												<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneForegroundBrush}"/>
-											</ObjectAnimationUsingKeyFrames>
-										</Storyboard>
-									</VisualState>
-									<VisualState x:Name="Disabled">
-										<Storyboard>
-											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentContainer">
-												<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}"/>
-											</ObjectAnimationUsingKeyFrames>
-											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ButtonBackground">
-												<DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}"/>
-											</ObjectAnimationUsingKeyFrames>
-											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="ButtonBackground">
-												<DiscreteObjectKeyFrame KeyTime="0" Value="Transparent"/>
-											</ObjectAnimationUsingKeyFrames>
-										</Storyboard>
-									</VisualState>
-								</VisualStateGroup>
-							</VisualStateManager.VisualStateGroups>
-							<Border x:Name="ButtonBackground" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="100" Margin="{StaticResource PhoneTouchTargetOverhang}">
-								<ContentControl x:Name="ContentContainer" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
-							</Border>
-						</Grid>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
-	</phone:PhoneApplicationPage.Resources>
+    <phone:PhoneApplicationPage.Resources>
+        <Storyboard x:Name="OpenList">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="ScaleList">
+                <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="IntervalList">
+                <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="listsBackground">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="listsBackground">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="RangeList">
+                <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="CloseList">
+            <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="ScaleList" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <CubicEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="IntervalList" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <CubicEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="ScaleList">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="90">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="IntervalList">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="90">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ScaleList">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="IntervalList">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="listsBackground">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimation Duration="0:0:0.2" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="listsBackground" d:IsOptimized="True"/>
+            <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="RangeList" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <CubicEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="RangeList">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="90">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="RangeList">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Style x:Key="RoundButton" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="{StaticResource PhoneForegroundBrush}"/>
+            <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+            <Setter Property="BorderThickness" Value="{StaticResource PhoneBorderThickness}"/>
+            <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiBold}"/>
+            <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMediumLarge}"/>
+            <Setter Property="Padding" Value="10,3,10,5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="Transparent">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver"/>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentContainer">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneBackgroundBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="ButtonBackground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneForegroundBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ButtonBackground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneForegroundBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentContainer">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ButtonBackground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="ButtonBackground">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="ButtonBackground" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="100" Margin="{StaticResource PhoneTouchTargetOverhang}">
+                                <ContentControl x:Name="ContentContainer" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </phone:PhoneApplicationPage.Resources>
 
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    
-	<phone:PhoneApplicationPage.FontFamily>
-		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
-	</phone:PhoneApplicationPage.FontFamily>
-	<phone:PhoneApplicationPage.FontSize>
-		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
-	</phone:PhoneApplicationPage.FontSize>
-	<phone:PhoneApplicationPage.Foreground>
-		<StaticResource ResourceKey="PhoneForegroundBrush"/>
-	</phone:PhoneApplicationPage.Foreground>
+
+    <phone:PhoneApplicationPage.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+    </phone:PhoneApplicationPage.FontFamily>
+    <phone:PhoneApplicationPage.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal"/>
+    </phone:PhoneApplicationPage.FontSize>
+    <phone:PhoneApplicationPage.Foreground>
+        <StaticResource ResourceKey="PhoneForegroundBrush"/>
+    </phone:PhoneApplicationPage.Foreground>
     <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Opacity="0.99" d:IsHidden="True">
-        	<shell:ApplicationBar.MenuItems>
-        		<shell:ApplicationBarMenuItem IsEnabled="True" Text="Dictionary" d:IsHidden="True" Click="ApplicationBarMenuItem_Click_1"/>
-        		<shell:ApplicationBarMenuItem IsEnabled="True" Text="Settings" d:IsHidden="True"/>
-        		<shell:ApplicationBarMenuItem IsEnabled="True" Text="Help" d:IsHidden="True"/>
-        		<shell:ApplicationBarMenuItem IsEnabled="True" Text="About" d:IsHidden="True"/>
-        	</shell:ApplicationBar.MenuItems>
-            <shell:ApplicationBarIconButton x:Name="SoundButton" IconUri="/Assets/AppBar/sound on.png" IsEnabled="True" Text="Sound" Click="ApplicationBarIconButton_Click_1" d:IsHidden="True"/>
-            <shell:ApplicationBarIconButton x:Name="ScaleButton" IconUri="/Assets/AppBar/appbar.phone.numbersign.rest.png" IsEnabled="True" Text="Escala" Click="ScaleButton_Click" d:IsHidden="True"/>
-            <shell:ApplicationBarIconButton x:Name="IntervalButton" IconUri="/Assets/AppBar/appbar.time.rest.png" IsEnabled="True" Text="Interval" Click="IntervalButton_Click" d:IsHidden="True"/>
-            <shell:ApplicationBarIconButton x:Name="RangeButton" IconUri="/Assets/AppBar/range.png" IsEnabled="True" Text="Range" Click="RangeButton_Click" d:IsHidden="True"/>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Opacity="0.99" >
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem IsEnabled="True" Text="Dictionary"  Click="ApplicationBarMenuItem_Click_1"/>
+                <shell:ApplicationBarMenuItem IsEnabled="True" Text="Settings" />
+                <shell:ApplicationBarMenuItem IsEnabled="True" Text="Help" />
+                <shell:ApplicationBarMenuItem IsEnabled="True" Text="About" />
+            </shell:ApplicationBar.MenuItems>
+            <shell:ApplicationBarIconButton x:Name="SoundButton" IconUri="/Assets/AppBar/sound on.png" IsEnabled="True" Text="Sound" Click="ApplicationBarIconButton_Click_1" />
+            <shell:ApplicationBarIconButton x:Name="ScaleButton" IconUri="/Assets/AppBar/appbar.phone.numbersign.rest.png" IsEnabled="True" Text="Escala" Click="ScaleButton_Click" />
+            <shell:ApplicationBarIconButton x:Name="IntervalButton" IconUri="/Assets/AppBar/appbar.time.rest.png" IsEnabled="True" Text="Interval" Click="IntervalButton_Click" />
+            <shell:ApplicationBarIconButton x:Name="RangeButton" IconUri="/Assets/AppBar/range.png" IsEnabled="True" Text="Range" Click="RangeButton_Click" />
 
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
-	<i:Interaction.Triggers>
-		<i:EventTrigger EventName="MouseLeftButtonDown">
-			<ec:NavigateToPageAction TargetPage="/Dictionary.xaml"/>
-		</i:EventTrigger>
-	</i:Interaction.Triggers>
-    <Grid d:IsHidden="True">
+    <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <local:Sheet x:Name="sheet" Margin="0,-16" d:IsHidden="True" />
-        <Rectangle x:Name="listsBackground" Grid.ColumnSpan="2" Fill="{StaticResource PhoneSemitransparentBrush}" Stroke="Black" Visibility="Collapsed" d:IsHidden="True"/>
-        <Button HorizontalAlignment="Left" Height="100" Margin="56,24,0,0" VerticalAlignment="Top" Width="100" Background="{x:Null}" Click="Button_Click_2" Style="{StaticResource RoundButton}" d:IsHidden="True">
-        	<Canvas x:Name="Graphics" Height="51" Width="51" d:IsHidden="True">
-        		<Path x:Name="PauseSymbol1" Data="M30.514,2E-06 L51.031,2E-06 L51.031,51.031 L30.514,51.031 z M0,0 L20.517,0 L20.517,51.031 L0,51.031 z" Fill="{StaticResource PhoneForegroundBrush}" Height="40.032" Canvas.Left="5.5" Stretch="Fill" Canvas.Top="5.515" UseLayoutRounding="False" Width="40.031" Visibility="Collapsed" d:IsHidden="True"/>
-        		<Path x:Name="PlaySymbol" Data="F1M169.3398,66.1689L138.9708,91.6839L138.9708,40.6529z" Fill="{StaticResource PhoneForegroundBrush}" Stretch="Fill" UseLayoutRounding="False" Height="49.031" Canvas.Left="16.602" Width="29.179" Canvas.Top="1" d:IsHidden="True"/>
-        	</Canvas>
+        <local:Sheet x:Name="sheet" Margin="0,-16"  />
+        <Rectangle x:Name="listsBackground" Grid.ColumnSpan="2" Fill="{StaticResource PhoneSemitransparentBrush}" Stroke="Black" Visibility="Collapsed" />
+        <Button HorizontalAlignment="Left" Height="100" Margin="56,24,0,0" VerticalAlignment="Top" Width="100" Background="{x:Null}" Click="Button_Click_2" Style="{StaticResource RoundButton}" >
+            <Canvas x:Name="Graphics" Height="51" Width="51" >
+                <Path x:Name="PauseSymbol1" Data="M30.514,2E-06 L51.031,2E-06 L51.031,51.031 L30.514,51.031 z M0,0 L20.517,0 L20.517,51.031 L0,51.031 z" Fill="{StaticResource PhoneForegroundBrush}" Height="40.032" Canvas.Left="5.5" Stretch="Fill" Canvas.Top="5.515" UseLayoutRounding="False" Width="40.031" Visibility="Collapsed" />
+                <Path x:Name="PlaySymbol" Data="F1M169.3398,66.1689L138.9708,91.6839L138.9708,40.6529z" Fill="{StaticResource PhoneForegroundBrush}" Stretch="Fill" UseLayoutRounding="False" Height="49.031" Canvas.Left="16.602" Width="29.179" Canvas.Top="1" />
+            </Canvas>
         </Button>
-        <local:Clarinet x:Name="clarinet" Grid.Column="1" RenderTransformOrigin="0.5,0.5" Margin="0,0,-19,86" d:IsHidden="True">
-        	<local:Clarinet.RenderTransform>
-        		<CompositeTransform/>
-        	</local:Clarinet.RenderTransform>
+        <local:Clarinet x:Name="clarinet" Grid.Column="1" RenderTransformOrigin="0.5,0.5" Margin="0,0,-19,86" >
+            <local:Clarinet.RenderTransform>
+                <CompositeTransform/>
+            </local:Clarinet.RenderTransform>
         </local:Clarinet>
-        <ListBox x:Name="ScaleList" Height="448" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="40" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" SelectionChanged="ScaleList_SelectionChanged" Visibility="Collapsed" d:IsHidden="True">
-        	<ListBox.Projection>
-        		<PlaneProjection/>
-        	</ListBox.Projection>
-        	<ListBoxItem Content="C Maj"  IsSelected="True" d:IsHidden="True"/>	
-        	<ListBoxItem Content="D Maj" d:IsHidden="True" />	
-        	<ListBoxItem Content="E Maj" d:IsHidden="True" />	
-        	<ListBoxItem Content="F Maj" d:IsHidden="True" />	
-        	<ListBoxItem Content="G Maj" d:IsHidden="True" />	
-        	<ListBoxItem Content="A Maj" d:IsHidden="True" />	
-        	<ListBoxItem Content="B Maj" d:IsHidden="True" />	
-        	<ListBoxItem Content="All  " d:IsHidden="True" />	
-		</ListBox>
-        <ListBox x:Name="IntervalList" Height="448" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="40" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" SelectionChanged="IntervalList_SelectionChanged" Visibility="Collapsed" d:IsHidden="True">
-        	<ListBox.Projection>
-        		<PlaneProjection/>
-        	</ListBox.Projection>
-        	<ListBoxItem Content="0.5 s" d:IsHidden="True" />	
-        	<ListBoxItem Content="1 s" d:IsHidden="True" />	
-        	<ListBoxItem Content="2 s"  IsSelected="True" d:IsHidden="True"/>	
-        	<ListBoxItem Content="3 s" d:IsHidden="True" />	
-        	<ListBoxItem Content="5 s" d:IsHidden="True" />	
-        	<ListBoxItem Content="7 s" d:IsHidden="True" />	
-        	<ListBoxItem Content="15 s" d:IsHidden="True" />	
-        	<ListBoxItem Content="30 s" d:IsHidden="True" />	
-			
-		</ListBox>
-        <ListBox x:Name="RangeList" Height="448" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="40" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" SelectionChanged="RangeList_SelectionChanged" Visibility="Collapsed" d:IsHidden="True">
-        	<ListBox.Projection>
-        		<PlaneProjection/>
-        	</ListBox.Projection>
-        	<ListBoxItem Content="All" IsSelected="True" d:IsHidden="True"/>
-        	<ListBoxItem Content="Upper" d:IsHidden="True"/>
-        	<ListBoxItem Content="Middle" d:IsHidden="True"/>
-        	<ListBoxItem Content="Lower" d:IsHidden="True"/>	
+        <ListBox x:Name="ScaleList" Height="448" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="40" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" SelectionChanged="ScaleList_SelectionChanged" Visibility="Collapsed" >
+            <ListBox.Projection>
+                <PlaneProjection/>
+            </ListBox.Projection>
+            <ListBoxItem Content="C Maj"  IsSelected="True" />
+            <ListBoxItem Content="D Maj"  />
+            <ListBoxItem Content="E Maj"  />
+            <ListBoxItem Content="F Maj"  />
+            <ListBoxItem Content="G Maj"  />
+            <ListBoxItem Content="A Maj"  />
+            <ListBoxItem Content="B Maj"  />
+            <ListBoxItem Content="All  "  />
+        </ListBox>
+        <ListBox x:Name="IntervalList" Height="448" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="40" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" SelectionChanged="IntervalList_SelectionChanged" Visibility="Collapsed" >
+            <ListBox.Projection>
+                <PlaneProjection/>
+            </ListBox.Projection>
+            <ListBoxItem Content="1/4 s"  />
+            <ListBoxItem Content="1/2 s"  />
+            <ListBoxItem Content="1 s" />
+            <ListBoxItem Content="2 s"  IsSelected="True"/>
+            <ListBoxItem Content="3 s"    />
+            <ListBoxItem Content="5 s"    />
+            <ListBoxItem Content="7 s"    />
+            <ListBoxItem Content="15 s"   />
+            <ListBoxItem Content="30 s"   />
+
+        </ListBox>
+        <ListBox x:Name="RangeList" Height="448" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="40" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" SelectionChanged="RangeList_SelectionChanged" Visibility="Collapsed" >
+            <ListBox.Projection>
+                <PlaneProjection/>
+            </ListBox.Projection>
+            <ListBoxItem Content="All" IsSelected="True" />
+            <ListBoxItem Content="Upper"   />
+            <ListBoxItem Content="Middle"  />
+            <ListBoxItem Content="Lower"   />
         </ListBox>
 
     </Grid>
