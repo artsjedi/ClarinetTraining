@@ -33,10 +33,6 @@ namespace ClarinetTraining
         private int[] chromaticNot = new int[] { 0, 0, 1, 1, 2, 3, 3, 4, 4, 5, 5, 6 };
         private int[] chromaticSus = new int[] { 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0 };
 
-        //
-        private string[] scalesNames = { "C maj", "D maj", "E maj", "F maj", "G maj", "A maj", "B maj" };
-        private string[] intervalsText = { "1/2 s", "1s", "2s", "4s", "8s", "16s"};
-
         private int[] intervalsValues = { 250, 500, 1000, 2000, 3000, 5000, 7000, 15000, 30000 };
 
         private Random rnd = new Random();
@@ -56,11 +52,11 @@ namespace ClarinetTraining
 
         private void setlists()
         {
-            foreach (string i in scalesNames)
-                ScaleList.Items.Add(i);
-
-            foreach (string i in intervalsText)
-                IntervalList.Items.Add(i);
+            //foreach (string i in scalesNames)
+            //    ScaleList.Items.Add(i);
+            //
+            //foreach (string i in intervalsText)
+            //    IntervalList.Items.Add(i);
         }
 
         private void setInterval(int delay){
@@ -69,13 +65,14 @@ namespace ClarinetTraining
 
         private void startShowing()
         {
+            tick(null, null);
             timer.Start();
         }
 
         private void stopShowing()
         {
             timer.Stop();
-            sheet.hideNote();
+            //sheet.hideNote();
         }
 
         /// <summary>
@@ -86,19 +83,28 @@ namespace ClarinetTraining
         {
 
             sheet.showNote(n);
-            if (!clarinet.showNote(n)) tick(null, null);
+            clarinet.showNote(n);
             if (soundOn) sound.playNote(n);
         }
-       
+
+        private void displayRandomNote()
+        {
+            Note n;
+            do
+                n = randomNote(currentScale, currentUpper, currentLower);
+            while (!clarinet.showNote(n));
+                
+            sheet.showNote(n);
+            if (soundOn) sound.playNote(n);
+        }
+
         /// <summary>
         /// timer tick
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void tick(Object sender, EventArgs e){
-            var n = randomNote(currentScale, currentUpper, currentLower);
-            displayNote(n);
-            
+            displayRandomNote();
         }
 
         /////////////////////////////////////////////////// this below shoud be in another class /////////

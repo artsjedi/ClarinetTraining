@@ -9,7 +9,7 @@
 	xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
 	x:Class="ClarinetTraining.MainPage"
-	SupportedOrientations="Portrait" Orientation="Portrait"
+	SupportedOrientations="PortraitOrLandscape" Orientation="Landscape"
 	shell:SystemTray.IsVisible="True"
     local:TiltEffect.IsTiltEnabled="True">
     <phone:PhoneApplicationPage.Resources>
@@ -203,7 +203,7 @@
         <StaticResource ResourceKey="PhoneForegroundBrush"/>
     </phone:PhoneApplicationPage.Foreground>
     <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Opacity="0.99" >
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Opacity="0.999999999999999999999999" >
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem IsEnabled="True" Text="Dictionary"  Click="ApplicationBarMenuItem_Click_1"/>
                 <shell:ApplicationBarMenuItem IsEnabled="True" Text="Settings" />
@@ -217,63 +217,65 @@
 
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
-    <Grid >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <local:Sheet x:Name="sheet" Margin="0,-16"  />
-        <Rectangle x:Name="listsBackground" Grid.ColumnSpan="2" Fill="{StaticResource PhoneSemitransparentBrush}" Stroke="Black" Visibility="Collapsed" />
-        <Button HorizontalAlignment="Left" Height="100" Margin="56,24,0,0" VerticalAlignment="Top" Width="100" Background="{x:Null}" Click="Button_Click_2" Style="{StaticResource RoundButton}" >
-            <Canvas x:Name="Graphics" Height="51" Width="51" >
-                <Path x:Name="PauseSymbol1" Data="M30.514,2E-06 L51.031,2E-06 L51.031,51.031 L30.514,51.031 z M0,0 L20.517,0 L20.517,51.031 L0,51.031 z" Fill="{StaticResource PhoneForegroundBrush}" Height="40.032" Canvas.Left="5.5" Stretch="Fill" Canvas.Top="5.515" UseLayoutRounding="False" Width="40.031" Visibility="Collapsed" />
-                <Path x:Name="PlaySymbol" Data="F1M169.3398,66.1689L138.9708,91.6839L138.9708,40.6529z" Fill="{StaticResource PhoneForegroundBrush}" Stretch="Fill" UseLayoutRounding="False" Height="49.031" Canvas.Left="16.602" Width="29.179" Canvas.Top="1" />
-            </Canvas>
-        </Button>
-        <local:Clarinet x:Name="clarinet" Grid.Column="1" RenderTransformOrigin="0.5,0.5" Margin="0,0,-19,86" >
-            <local:Clarinet.RenderTransform>
-                <CompositeTransform/>
-            </local:Clarinet.RenderTransform>
-        </local:Clarinet>
-        <ListBox x:Name="ScaleList" Height="448" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="40" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" SelectionChanged="ScaleList_SelectionChanged" Visibility="Collapsed" >
-            <ListBox.Projection>
-                <PlaneProjection/>
-            </ListBox.Projection>
-            <ListBoxItem Content="C Maj"  IsSelected="True" />
-            <ListBoxItem Content="D Maj"  />
-            <ListBoxItem Content="E Maj"  />
-            <ListBoxItem Content="F Maj"  />
-            <ListBoxItem Content="G Maj"  />
-            <ListBoxItem Content="A Maj"  />
-            <ListBoxItem Content="B Maj"  />
-            <ListBoxItem Content="All  "  />
-        </ListBox>
-        <ListBox x:Name="IntervalList" Height="448" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="40" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" SelectionChanged="IntervalList_SelectionChanged" Visibility="Collapsed" >
-            <ListBox.Projection>
-                <PlaneProjection/>
-            </ListBox.Projection>
-            <ListBoxItem Content="1/4 s"  />
-            <ListBoxItem Content="1/2 s"  />
-            <ListBoxItem Content="1 s" />
-            <ListBoxItem Content="2 s"  IsSelected="True"/>
-            <ListBoxItem Content="3 s"    />
-            <ListBoxItem Content="5 s"    />
-            <ListBoxItem Content="7 s"    />
-            <ListBoxItem Content="15 s"   />
-            <ListBoxItem Content="30 s"   />
+    <Grid>
+		<Grid >
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="285*"/>
+				<ColumnDefinition Width="214*"/>
+			</Grid.ColumnDefinitions>
+			<local:Sheet x:Name="sheet" VerticalAlignment="Center" Height="Auto" Width="Auto" />
+			<local:Clarinet x:Name="clarinet" Grid.Column="1" Height="Auto" Width="Auto"/>
 
-        </ListBox>
-        <ListBox x:Name="RangeList" Height="448" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="40" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" SelectionChanged="RangeList_SelectionChanged" Visibility="Collapsed" >
-            <ListBox.Projection>
-                <PlaneProjection/>
-            </ListBox.Projection>
-            <ListBoxItem Content="All" IsSelected="True" />
-            <ListBoxItem Content="Upper"   />
-            <ListBoxItem Content="Middle"  />
-            <ListBoxItem Content="Lower"   />
-        </ListBox>
+		</Grid>
 
-    </Grid>
+
+		<Rectangle x:Name="listsBackground" Fill="{StaticResource PhoneSemitransparentBrush}" Stroke="Black" Visibility="Collapsed" Margin="0,0,248,-288" />
+		<Button HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Background="{x:Null}" Click="Button_Click_2" Style="{StaticResource RoundButton}" >
+			<Canvas x:Name="Graphics" Height="51" Width="51" >
+				<Path x:Name="PauseSymbol1" Data="M30.514,2E-06 L51.031,2E-06 L51.031,51.031 L30.514,51.031 z M0,0 L20.517,0 L20.517,51.031 L0,51.031 z" Fill="{StaticResource PhoneForegroundBrush}" Height="40.032" Canvas.Left="5.5" Stretch="Fill" Canvas.Top="5.515" UseLayoutRounding="False" Width="40.031" Visibility="Collapsed" />
+				<Path x:Name="PlaySymbol" Data="F1M169.3398,66.1689L138.9708,91.6839L138.9708,40.6529z" Fill="{StaticResource PhoneForegroundBrush}" Stretch="Fill" UseLayoutRounding="False" Height="49.031" Canvas.Left="16.602" Width="29.179" Canvas.Top="1" />
+			</Canvas>
+		</Button>
+		<ListBox x:Name="ScaleList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="40" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="ScaleList_SelectionChanged" Width="480" HorizontalAlignment="Right" Visibility="Collapsed" >
+			<ListBox.Projection>
+				<PlaneProjection/>
+			</ListBox.Projection>
+			<ListBoxItem Content="C Maj"  IsSelected="True" />
+			<ListBoxItem Content="D Maj"  />
+			<ListBoxItem Content="E Maj"  />
+			<ListBoxItem Content="F Maj"  />
+			<ListBoxItem Content="G Maj"  />
+			<ListBoxItem Content="A Maj"  />
+			<ListBoxItem Content="B Maj"  />
+			<ListBoxItem Content="All  "  />
+		</ListBox>
+		<ListBox x:Name="IntervalList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="40" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="IntervalList_SelectionChanged" Width="480" HorizontalAlignment="Right" Visibility="Collapsed" >
+			<ListBox.Projection>
+				<PlaneProjection/>
+			</ListBox.Projection>
+			<ListBoxItem Content="1/4 s"  />
+			<ListBoxItem Content="1/2 s"  />
+			<ListBoxItem Content="1 s" />
+			<ListBoxItem Content="2 s"  IsSelected="True"/>
+			<ListBoxItem Content="3 s"    />
+			<ListBoxItem Content="5 s"    />
+			<ListBoxItem Content="7 s"    />
+			<ListBoxItem Content="15 s"   />
+			<ListBoxItem Content="30 s"   />
+
+		</ListBox>
+		<ListBox x:Name="RangeList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="40" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="RangeList_SelectionChanged" Width="480" HorizontalAlignment="Right" Visibility="Collapsed" >
+			<ListBox.Projection>
+				<PlaneProjection/>
+			</ListBox.Projection>
+			<ListBoxItem Content="All" IsSelected="True" />
+			<ListBoxItem Content="Upper"   />
+			<ListBoxItem Content="Middle"  />
+			<ListBoxItem Content="Lower"   />
+		</ListBox>
+
+
+	</Grid>
 
 
 </phone:PhoneApplicationPage>
