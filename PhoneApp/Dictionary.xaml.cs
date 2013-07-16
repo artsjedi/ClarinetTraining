@@ -36,6 +36,7 @@ namespace ClarinetTraining
                 itensContainer.Children.Add(di);
                 di.setNote(i);
             }
+            wait_text.Visibility = System.Windows.Visibility.Collapsed; 
             itensContainer.UpdateLayout();
         }
     }
