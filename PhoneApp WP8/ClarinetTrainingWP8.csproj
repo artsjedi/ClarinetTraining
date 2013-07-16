@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{027D84E9-8A7F-4C00-A2D1-EBB424A5B0D5}</ProjectGuid>
+    <ProjectGuid>{CAEB2EF0-73FC-4A92-BC0F-FB0395A8C9D1}</ProjectGuid>
     <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -103,54 +103,48 @@
     <Reference Include="System.Windows.Interactivity" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App.xaml.cs">
+    <Compile Include="..\PhoneApp\About.xaml.cs">
+      <Link>About.xaml.cs</Link>
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PhoneApp\App.xaml.cs">
+      <Link>App.xaml.cs</Link>
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ClarinetSound.cs" />
-    <Compile Include="Dictionary.xaml.cs">
-      <DependentUpon>Dictionary.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Note.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sheet.xaml.cs">
-      <DependentUpon>sheet.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TiltEffect.cs" />
-    <Compile Include="WindowsPhoneControl1.xaml.cs">
-      <DependentUpon>WindowsPhoneControl1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Clarinet.xaml.cs">
+    <Compile Include="..\PhoneApp\Clarinet.xaml.cs">
+      <Link>Clarinet.xaml.cs</Link>
       <DependentUpon>Clarinet.xaml</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </ApplicationDefinition>
-    <Page Include="Dictionary.xaml">
-      <Generator>MSBuild:MarkupCompilePass1</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="sheet.xaml">
-      <Generator>MSBuild:MarkupCompilePass1</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="WindowsPhoneControl1.xaml">
-      <Generator>MSBuild:MarkupCompilePass1</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Clarinet.xaml">
-      <Generator>MSBuild:MarkupCompilePass1</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    <Compile Include="..\PhoneApp\ClarinetSound.cs">
+      <Link>ClarinetSound.cs</Link>
+    </Compile>
+    <Compile Include="..\PhoneApp\Dictionary.xaml.cs">
+      <Link>Dictionary.xaml.cs</Link>
+      <DependentUpon>Dictionary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PhoneApp\DictionaryItem.xaml.cs">
+      <Link>DictionaryItem.xaml.cs</Link>
+      <DependentUpon>DictionaryItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PhoneApp\MainPage.xaml.cs">
+      <Link>MainPage.xaml.cs</Link>
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PhoneApp\Note.cs">
+      <Link>Note.cs</Link>
+    </Compile>
+    <Compile Include="..\PhoneApp\sheet.xaml.cs">
+      <Link>sheet.xaml.cs</Link>
+      <DependentUpon>sheet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PhoneApp\TiltEffect.cs">
+      <Link>TiltEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\PhoneApp\WindowsPhoneControl1.xaml.cs">
+      <Link>WindowsPhoneControl1.xaml.cs</Link>
+      <DependentUpon>WindowsPhoneControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml">
@@ -161,9 +155,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\PhoneApp\SplashScreenImage.jpg">
+      <Link>SplashScreenImage.jpg</Link>
+    </Content>
     <Content Include="100.png" />
     <Content Include="159.png" />
     <Content Include="173.png" />
+    <Content Include="300.png" />
     <Content Include="336.png" />
     <Content Include="62.png" />
     <Content Include="Assets\AppBar\appbar.speaker.rest.png" />
@@ -316,7 +314,6 @@
     </Content>
     <Content Include="Assets\transport.pause.png" />
     <Content Include="Assets\transport.play.png" />
-    <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AppBar\sound on.png">
@@ -336,6 +333,48 @@
   <ItemGroup>
     <Folder Include="Assets\Clarinet\" />
     <Folder Include="Assets\Symbols\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\PhoneApp\About.xaml">
+      <Link>About.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <ApplicationDefinition Include="..\PhoneApp\App.xaml">
+      <Link>App.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="..\PhoneApp\Clarinet.xaml">
+      <Link>Clarinet.xaml</Link>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PhoneApp\Dictionary.xaml">
+      <Link>Dictionary.xaml</Link>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PhoneApp\DictionaryItem.xaml">
+      <Link>DictionaryItem.xaml</Link>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PhoneApp\MainPage.xaml">
+      <Link>MainPage.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PhoneApp\sheet.xaml">
+      <Link>sheet.xaml</Link>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PhoneApp\WindowsPhoneControl1.xaml">
+      <Link>WindowsPhoneControl1.xaml</Link>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

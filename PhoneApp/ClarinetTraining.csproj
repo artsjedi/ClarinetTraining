@@ -148,7 +148,10 @@
     <None Include="Properties\WMAppManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="100.png" />
+    <Content Include="159.png" />
     <Content Include="173.png" />
+    <Content Include="336.png" />
     <Content Include="62.png" />
     <Content Include="Assets\AppBar\appbar.speaker.rest.png" />
     <Content Include="Assets\AppBar\appbar.switch.rest.png" />
