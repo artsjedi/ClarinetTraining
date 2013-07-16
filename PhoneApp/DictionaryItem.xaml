@@ -1,0 +1,19 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:ClarinetTraining" x:Class="ClarinetTraining.DictionaryItem"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480" Height="780" Width="170">
+    
+    <Grid x:Name="LayoutRoot" Height="780" Width="170">
+
+        <local:Clarinet x:Name="clarinet" VerticalAlignment="Bottom" Height="491" Width="170"/>
+    	<local:Sheet x:Name="sheet" VerticalAlignment="Top" Height="304" Width="170"/>
+
+    </Grid>
+</UserControl>

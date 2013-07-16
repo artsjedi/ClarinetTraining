@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{a7090f18-bd99-443d-894a-4b14c775fa17}" Title="Clarinet Training" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="ClarinetTraining author" Description="Apllication for training notes on Clarinet" Publisher="ClarinetTraining">
-    <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
+  <App xmlns="" ProductID="{a7090f18-bd99-443d-894a-4b14c775fa17}" Title="Clarinet Training" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="ClarinetTraining author" Description="Apllication for training notes on Clarinet" Publisher="ClarinetTraining" BitsPerPixel="16">
+    <IconPath IsRelative="true" IsResource="false">62.png</IconPath>
     <Capabilities>
- 
     </Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
@@ -11,7 +10,7 @@
     <Tokens>
       <PrimaryToken TokenID="ClarinetTrainingToken" TaskName="_default">
         <TemplateType5>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
+          <BackgroundImageURI IsRelative="true" IsResource="false">173.png</BackgroundImageURI>
           <Count>0</Count>
           <Title>Clarinet Training</Title>
         </TemplateType5>

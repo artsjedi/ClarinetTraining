@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="pt" original="StringResources.resx" tool-id="MultilingualAppToolkit" product-name="PinNotes" product-version="2.0.1" build-num="1">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="1.2.2017.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="Resx">
+        <trans-unit id="Resx/About" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="translated" state-qualifier="mt-suggestion">Sobre</target>
+        </trans-unit>
+        <trans-unit id="Resx/AddNew" translate="yes" xml:space="preserve">
+          <source>New Note</source>
+          <target state="translated" state-qualifier="mt-suggestion">Nova nota</target>
+        </trans-unit>
+        <trans-unit id="Resx/Colors" translate="yes" xml:space="preserve">
+          <source>Colors</source>
+          <target state="translated" state-qualifier="mt-suggestion">Cores</target>
+        </trans-unit>
+        <trans-unit id="Resx/Pin" translate="yes" xml:space="preserve">
+          <source>Pin</source>
+          <target state="translated">Fixar</target>
+        </trans-unit>
+        <trans-unit id="Resx/PinNewNote" translate="yes" xml:space="preserve">
+          <source>Pin new Note</source>
+          <target state="translated">Fixar outra nota</target>
+        </trans-unit>
+        <trans-unit id="Resx/trialMessage" translate="yes" xml:space="preserve">
+          <source>Changing colors are only available in the full version. Would you like to purchase the full version?</source>
+          <target state="translated">Alterar cores só está disponível na versão completa. Gostaria de comprar a versão completa?</target>
+        </trans-unit>
+        <trans-unit id="Resx/TryColors" translate="yes" xml:space="preserve">
+          <source>Try Colors</source>
+          <target state="translated" state-qualifier="mt-suggestion">Tente cores</target>
+        </trans-unit>
+        <trans-unit id="Resx/WriteHere" translate="yes" xml:space="preserve">
+          <source>Write Here</source>
+          <target state="translated" state-qualifier="mt-suggestion">Escreva aqui</target>
+        </trans-unit>
+        <trans-unit id="Resx/Error" translate="yes" xml:space="preserve">
+          <source>Sorry I was unable to pin this note.</source>
+          <target state="translated">Desculpe, Não foi possível fixar esta nota.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Updated" translate="yes" xml:space="preserve">
+          <source>The note was updated.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">A nota foi atualizada.</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

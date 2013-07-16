@@ -60,6 +60,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -67,11 +70,31 @@
     <Compile Include="Dictionary.xaml.cs">
       <DependentUpon>Dictionary.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DictionaryItem.xaml.cs">
+      <DependentUpon>DictionaryItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Note.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\lirum.Designer.cs" />
+    <Compile Include="Resources\StringResources.Designer.cs" />
+    <Compile Include="Resources\StringResources.es.Designer.cs" />
+    <Compile Include="Resources\StringResources.es1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringResources.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\StringResources.pl-PL.Designer.cs" />
+    <Compile Include="Resources\StringResources.pt.Designer.cs" />
+    <Compile Include="Resources\StringResources.qps-ploc.Designer.cs" />
+    <Compile Include="Resources\StringResources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="sheet.xaml.cs">
       <DependentUpon>sheet.xaml</DependentUpon>
     </Compile>
@@ -88,7 +111,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="About.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Dictionary.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DictionaryItem.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -110,15 +141,15 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Shortcuts\Thumbs.db" />
     <None Include="Properties\AppManifest.xml">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\WMAppManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ApplicationIcon.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="173.png" />
+    <Content Include="62.png" />
     <Content Include="Assets\AppBar\appbar.speaker.rest.png" />
     <Content Include="Assets\AppBar\appbar.switch.rest.png" />
     <Content Include="Assets\AppBar\appbar.time.rest.png" />
@@ -126,6 +157,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\basecircle.png" />
+    <Content Include="Assets\Lirum.png" />
+    <Content Include="Assets\Shortcuts\Bookmarks.png" />
+    <Content Include="Assets\Shortcuts\Facebook alt 1.png" />
+    <Content Include="Assets\Shortcuts\Internet.png" />
+    <Content Include="Assets\Shortcuts\Lirum.png" />
+    <Content Include="Assets\Shortcuts\Twitter NEW.png" />
+    <Content Include="Assets\Shortcuts\Windows Marketplace.png" />
     <Content Include="Assets\Sounds\A#1.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -269,9 +307,6 @@
     </Content>
     <Content Include="Assets\transport.pause.png" />
     <Content Include="Assets\transport.play.png" />
-    <Content Include="Background.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -292,6 +327,34 @@
   <ItemGroup>
     <Folder Include="Assets\Clarinet\" />
     <Folder Include="Assets\Symbols\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\lirum.es.resx" />
+    <EmbeddedResource Include="Resources\lirum.pl-PL.resx" />
+    <EmbeddedResource Include="Resources\lirum.pt.resx" />
+    <EmbeddedResource Include="Resources\lirum.qps-ploc.resx" />
+    <EmbeddedResource Include="Resources\lirum.resx" />
+    <EmbeddedResource Include="Resources\StringResources.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringResources.es1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\StringResources.pl-PL.resx" />
+    <EmbeddedResource Include="Resources\StringResources.pt.resx" />
+    <EmbeddedResource Include="Resources\StringResources.qps-ploc.resx" />
+    <EmbeddedResource Include="Resources\StringResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringResources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <XliffResource Include="Resources\lirum.es.xlf" />
+    <XliffResource Include="Resources\lirum.pl-PL.xlf" />
+    <XliffResource Include="Resources\lirum.pt.xlf" />
+    <XliffResource Include="Resources\lirum.qps-ploc.xlf" />
+    <XliffResource Include="Resources\StringResources.es.xlf" />
+    <XliffResource Include="Resources\StringResources.pl-PL.xlf" />
+    <XliffResource Include="Resources\StringResources.pt.xlf" />
+    <XliffResource Include="Resources\StringResources.qps-ploc.xlf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />

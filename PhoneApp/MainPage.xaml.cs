@@ -12,6 +12,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using System.Windows.Threading;
 using Microsoft.Phone.Shell;
+using System.IO.IsolatedStorage;
 
 namespace ClarinetTraining
 {
@@ -41,26 +42,33 @@ namespace ClarinetTraining
         {
             
             InitializeComponent();
-
-
-            setlists();
             timer = new DispatcherTimer();
             timer.Tick += tick;
             setInterval(_delay);
             sound = new ClarinetSound();
         }
 
-        private void setlists()
+
+        private void PhoneApplicationPage_Loaded_1(object sender, RoutedEventArgs e)
         {
-            //foreach (string i in scalesNames)
-            //    ScaleList.Items.Add(i);
-            //
-            //foreach (string i in intervalsText)
-            //    IntervalList.Items.Add(i);
+            loadCondiguration();
+            PageIn.Begin();
         }
 
-        private void setInterval(int delay){
-           if(timer!=null) timer.Interval = new TimeSpan(0, 0,0,0,delay); 
+        private void setInterval(int delay)
+        {
+            if (timer != null) timer.Interval = new TimeSpan(0, 0, 0, 0, delay);
+        }
+
+        
+        private void setSound(bool value)
+        {
+            soundOn = value;
+
+            var on =    new Uri("/Assets/AppBar/sound on.png",UriKind.Relative);
+            var off =   new Uri("/Assets/AppBar/sound off.png",UriKind.Relative);
+
+            (ApplicationBar.Buttons[0] as ApplicationBarIconButton).IconUri = value ? on : off;
         }
 
         private void startShowing()
@@ -72,7 +80,6 @@ namespace ClarinetTraining
         private void stopShowing()
         {
             timer.Stop();
-            //sheet.hideNote();
         }
 
         /// <summary>
@@ -87,6 +94,10 @@ namespace ClarinetTraining
             if (soundOn) sound.playNote(n);
         }
 
+        /// <summary>
+        /// Display a Rando note
+        /// </summary>
+        /// <param name="n"></param>
         private void displayRandomNote()
         {
             Note n;
@@ -105,6 +116,33 @@ namespace ClarinetTraining
         /// <param name="e"></param>
         private void tick(Object sender, EventArgs e){
             displayRandomNote();
+        }
+
+        /////////////////////////////////////////////////// Saved Configuration //////////////////////////
+
+        /// <summary>
+        /// Loads user configuration and configures UI
+        /// </summary>
+        private void loadCondiguration()
+        {
+            bool inverted = false;
+            bool sound = true;
+            int timeInterval = 3;
+            int scale = 0;
+            int range = 0;
+
+            IsolatedStorageSettings.ApplicationSettings.TryGetValue("inverted", out inverted);
+            IsolatedStorageSettings.ApplicationSettings.TryGetValue("time", out timeInterval);
+            IsolatedStorageSettings.ApplicationSettings.TryGetValue("scale", out scale);
+            IsolatedStorageSettings.ApplicationSettings.TryGetValue("range", out range);
+            if (IsolatedStorageSettings.ApplicationSettings.TryGetValue("sound", out sound))
+                setSound(sound);
+
+            RangeList.SelectedIndex = range;
+            IntervalList.SelectedIndex = timeInterval;
+            ScaleList.SelectedIndex = scale;
+            clarinet.setInverted(inverted);
+            
         }
 
         /////////////////////////////////////////////////// this below shoud be in another class /////////
@@ -194,16 +232,18 @@ namespace ClarinetTraining
         private void ApplicationBarIconButton_Click_1(object sender, EventArgs e)
         {
             
-            var on =    new Uri("/Assets/AppBar/sound on.png",UriKind.Relative);
-            var off =   new Uri("/Assets/AppBar/sound off.png",UriKind.Relative);
+            setSound(!soundOn); 
 
-            soundOn = !soundOn;
-            (sender as ApplicationBarIconButton).IconUri = soundOn ? on : off;
+
+            IsolatedStorageSettings.ApplicationSettings["sound"] = soundOn;
+            IsolatedStorageSettings.ApplicationSettings.Save();
+
         }
 
 		private void hideLists(){
             try
             {
+                //listsBackground.Visibility = System.Windows.Visibility.Collapsed;
                 CloseList.Begin();
                 ApplicationBar.IsVisible = true;
             }
@@ -215,15 +255,19 @@ namespace ClarinetTraining
         private void ScaleButton_Click(object sender, System.EventArgs e)
         {
             ApplicationBar.IsVisible = false;
+            listsBackground.Visibility = System.Windows.Visibility.Visible;
 			ScaleList.Visibility = System.Windows.Visibility.Visible;
             IntervalList.Visibility = System.Windows.Visibility.Collapsed;
             RangeList.Visibility = System.Windows.Visibility.Collapsed;
             OpenList.Begin();
+
+
         }
 
         private void IntervalButton_Click(object sender, System.EventArgs e)
         {
             ApplicationBar.IsVisible = false;
+            listsBackground.Visibility = System.Windows.Visibility.Visible;
 			ScaleList.Visibility = System.Windows.Visibility.Collapsed;
             RangeList.Visibility = System.Windows.Visibility.Collapsed;
             IntervalList.Visibility = System.Windows.Visibility.Visible;
@@ -233,6 +277,7 @@ namespace ClarinetTraining
         private void RangeButton_Click(object sender, System.EventArgs e)
         {
             ApplicationBar.IsVisible = false;
+            listsBackground.Visibility = System.Windows.Visibility.Visible;
             ScaleList.Visibility = System.Windows.Visibility.Collapsed;
             RangeList.Visibility = System.Windows.Visibility.Visible;
             IntervalList.Visibility = System.Windows.Visibility.Collapsed;
@@ -245,6 +290,8 @@ namespace ClarinetTraining
             var i = (sender as ListBox).SelectedIndex;
             setInterval(intervalsValues[i]);
 
+            IsolatedStorageSettings.ApplicationSettings["time"] = i;
+            IsolatedStorageSettings.ApplicationSettings.Save();
         }
 
         private void ScaleList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -253,11 +300,17 @@ namespace ClarinetTraining
             var i = (sender as ListBox).SelectedIndex;
             setScale(i);
         	hideLists();
+
+
+            IsolatedStorageSettings.ApplicationSettings["scale"] = i;
+            IsolatedStorageSettings.ApplicationSettings.Save();
         }
 
 		private void RangeList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-        	switch( (sender as ListBox).SelectedIndex){
+
+            var i = (sender as ListBox).SelectedIndex;
+        	switch(i ){
 				case 0: 
 					currentLower = 2;
 					currentUpper = 29;
@@ -276,6 +329,9 @@ namespace ClarinetTraining
 					break;
 			}
 			hideLists();
+
+            IsolatedStorageSettings.ApplicationSettings["range"] = i;
+            IsolatedStorageSettings.ApplicationSettings.Save();
         }
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
@@ -312,14 +368,37 @@ namespace ClarinetTraining
 
         /// Menus ///////////////////////////////////////////////////////////////////////////////
         
-        private void ApplicationBarMenuItem_Click_1(object sender, System.EventArgs e)
+     
+        private void About_Click(object sender, EventArgs e)
+        {
+            var uri = new Uri("/About.xaml", UriKind.Relative);
+            NavigationService.Navigate(uri);
+        }
+
+        private void Dictionary_Click(object sender, EventArgs e)
         {
             var uri = new Uri("/Dictionary.xaml", UriKind.Relative);
             NavigationService.Navigate(uri);
-
         }
+
+
+        private void Invert_Click(object sender, EventArgs e)
+        {
+            clarinet.setInverted(!clarinet.getInverted());
+
+            IsolatedStorageSettings.ApplicationSettings["inverted"] = clarinet.getInverted();
+            IsolatedStorageSettings.ApplicationSettings.Save();
+        }
+
+        private void listsBackground_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+        	hideLists();
+        }
+
+
         #endregion
 
+ 
  
     }
 }

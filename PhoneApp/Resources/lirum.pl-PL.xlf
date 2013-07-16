@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="pl-PL" original="lirum.resx" tool-id="MultilingualAppToolkit" product-name="PinNotes" product-version="2.0.1" build-num="1">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="1.2.2017.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="Resx">
+        <trans-unit id="Resx/MoreProductFromUs" translate="yes" xml:space="preserve">
+          <source>More product from us</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Więcej produktów od nas</target>
+        </trans-unit>
+        <trans-unit id="Resx/RateThisApp" translate="yes" xml:space="preserve">
+          <source>Rate this App</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Oceń ten aplikacja</target>
+        </trans-unit>
+        <trans-unit id="Resx/SubTitle" translate="yes" xml:space="preserve">
+          <source>Systems Technologies</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Systemy technologii</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

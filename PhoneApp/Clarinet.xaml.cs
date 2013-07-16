@@ -31,8 +31,7 @@ namespace ClarinetTraining
                 return "";
             }
         }
-
-
+        
         public Note NoteValue
         {
             set
@@ -47,6 +46,7 @@ namespace ClarinetTraining
         }
 
 		private bool inverted = false;
+
         private Dictionary<String, Boolean[]> clarinetDictionary;
         private Path[] keyShapes;
 
@@ -58,25 +58,36 @@ namespace ClarinetTraining
             defineDictionary();
        }
 
+
         /// <summary>
         /// Shows a note in the Clarinet
         /// </summary>
         /// <param name="n"></param>
         /// <returns></returns>
-        public bool showNote(Note n){
-
-            n = n.normalize();
-            var str = n.ToString("s");
+        public bool showNote(string note){
             bool[] keys;
-            if (clarinetDictionary.TryGetValue(str, out keys))
+            if (clarinetDictionary.TryGetValue(note, out keys))
                 activateKeys(keys);
             else
             {
-                System.Diagnostics.Debug.WriteLine("ERROR: " + str);
+                System.Diagnostics.Debug.WriteLine("ERROR: " + note);
                 return false;
             }
-
             return true;
+        }
+
+        /// <summary>
+        /// Shows a note in the Clarinet
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public bool showNote(Note n, bool alternative=false){
+
+            n = n.normalize();
+            var str = n.ToString("s");
+            if (alternative) str += "+";
+
+            return showNote(str);
         }
 
         /// <summary>
@@ -191,13 +202,27 @@ namespace ClarinetTraining
   
         }
 
+
+        public bool getInverted(){
+            return inverted;
+        }
+
+        public void setInverted(bool inverted)
+        {
+            this.inverted = inverted;
+            if (inverted)
+                VisualStateManager.GoToState(this, "Inverted", true);
+            else
+                VisualStateManager.GoToState(this, "Normal", true);
+
+
+            System.IO.IsolatedStorage.IsolatedStorageSettings.ApplicationSettings["inverted"] = this.getInverted();
+            System.IO.IsolatedStorage.IsolatedStorageSettings.ApplicationSettings.Save();
+        }
+
         private void Layer_1_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-			inverted=!inverted;	
-			if(inverted)
-        	VisualStateManager.GoToState(this, "Inverted", true); 
-			else
-			VisualStateManager.GoToState(this, "Normal", true); 
+            setInverted(!inverted);
         }
 
 

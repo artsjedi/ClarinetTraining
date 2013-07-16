@@ -22,6 +22,28 @@ namespace ClarinetTraining
 
         public Note(string str)
         {
+
+            //get note
+            for (int i = 0; i < notesKey.Length; i++)
+            {
+                if (str[0] == notesKey[i][0])
+                {
+                    this.note = i;
+                    break;
+                }
+            }
+
+            if (str.IndexOf("#") > 0) this.sus = true;
+            if (str.IndexOf("b") > 0) this.bmol = true;
+
+            try
+            {
+                str = str.Replace("+", "");
+                var octaveStr = str.Last().ToString();
+                this.octave = Convert.ToInt16(octaveStr) - 1;
+            }catch{
+                octave = 0;
+            }
         }
 
         public Note(int note, bool sus = false, bool bmol = false, int scale = 0)
