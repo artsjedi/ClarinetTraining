@@ -126,6 +126,10 @@
       <Link>DictionaryItem.xaml.cs</Link>
       <DependentUpon>DictionaryItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\PhoneApp\Help.xaml.cs">
+      <Link>Help.xaml.cs</Link>
+      <DependentUpon>Help.xaml</DependentUpon>
+    </Compile>
     <Compile Include="..\PhoneApp\MainPage.xaml.cs">
       <Link>MainPage.xaml.cs</Link>
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -171,6 +175,25 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\basecircle.png" />
+    <Content Include="Assets\Lirum.png" />
+    <Content Include="Assets\Shortcuts\Bookmarks.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shortcuts\Facebook alt 1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shortcuts\Internet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shortcuts\Lirum.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shortcuts\Twitter NEW.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shortcuts\Windows Marketplace.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\Sounds\A#1.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -314,6 +337,14 @@
     </Content>
     <Content Include="Assets\transport.pause.png" />
     <Content Include="Assets\transport.play.png" />
+    <Content Include="Assets\tutorial\tutorial-01.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\tutorial\tutorial-01w.jpg" />
+    <Content Include="Assets\tutorial\tutorial-02.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\tutorial\tutorial-02w.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AppBar\sound on.png">
@@ -358,6 +389,11 @@
     <Page Include="..\PhoneApp\DictionaryItem.xaml">
       <Link>DictionaryItem.xaml</Link>
       <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PhoneApp\Help.xaml">
+      <Link>Help.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\PhoneApp\MainPage.xaml">

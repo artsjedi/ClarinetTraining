@@ -21,6 +21,7 @@ namespace ClarinetTraining
         private int currentScale = 0;
         private int currentUpper = 29;
         private int currentLower = 2;
+        private bool currentNameVisibility = true;
 		
 		private int _delay = 2000; //ms
         private DispatcherTimer timer;
@@ -46,13 +47,42 @@ namespace ClarinetTraining
             timer.Tick += tick;
             setInterval(_delay);
             sound = new ClarinetSound();
+            PageIn.Begin();
+
+
         }
 
+        private void verifyFirstTime(){
+            bool visited;
+            IsolatedStorageSettings.ApplicationSettings.TryGetValue("visited", out visited);
+
+            if (!visited)
+            {
+                IsolatedStorageSettings.ApplicationSettings.Add("visited", true);
+                IsolatedStorageSettings.ApplicationSettings.Save();
+
+                var uri = new Uri("/Help.xaml", UriKind.Relative);
+                NavigationService.Navigate(uri);
+            }
+
+
+
+        }
 
         private void PhoneApplicationPage_Loaded_1(object sender, RoutedEventArgs e)
         {
             loadCondiguration();
-            PageIn.Begin();
+
+            verifyFirstTime();
+        }
+
+        private void setNameVisibility(bool visible)
+        {
+            currentNameVisibility =visible;
+            if (visible)
+                NoteName.Opacity = 1;
+            else
+                NoteName.Opacity = 0;
         }
 
         private void setInterval(int delay)
@@ -91,6 +121,7 @@ namespace ClarinetTraining
 
             sheet.showNote(n);
             clarinet.showNote(n);
+            NoteName.Text = n.ToString("");
             if (soundOn) sound.playNote(n);
         }
 
@@ -106,6 +137,7 @@ namespace ClarinetTraining
             while (!clarinet.showNote(n));
                 
             sheet.showNote(n);
+            NoteName.Text = n.ToString("");
             if (soundOn) sound.playNote(n);
         }
 
@@ -130,13 +162,20 @@ namespace ClarinetTraining
             int timeInterval = 3;
             int scale = 0;
             int range = 0;
+            bool NameVisibility = false;
 
             IsolatedStorageSettings.ApplicationSettings.TryGetValue("inverted", out inverted);
-            IsolatedStorageSettings.ApplicationSettings.TryGetValue("time", out timeInterval);
             IsolatedStorageSettings.ApplicationSettings.TryGetValue("scale", out scale);
             IsolatedStorageSettings.ApplicationSettings.TryGetValue("range", out range);
+            
             if (IsolatedStorageSettings.ApplicationSettings.TryGetValue("sound", out sound))
                 setSound(sound);
+
+            if (IsolatedStorageSettings.ApplicationSettings.TryGetValue("nameVisibility", out NameVisibility))
+                setNameVisibility(NameVisibility);
+
+            if (!IsolatedStorageSettings.ApplicationSettings.TryGetValue("time", out timeInterval)) ;
+            timeInterval = 3;
 
             RangeList.SelectedIndex = range;
             IntervalList.SelectedIndex = timeInterval;
@@ -390,13 +429,28 @@ namespace ClarinetTraining
             IsolatedStorageSettings.ApplicationSettings.Save();
         }
 
+        private void NoteName_Tap(object sender, EventArgs e)
+        {
+            setNameVisibility(!currentNameVisibility);
+            IsolatedStorageSettings.ApplicationSettings["nameVisibility"] = currentNameVisibility;
+            IsolatedStorageSettings.ApplicationSettings.Save();
+        }
+
+
         private void listsBackground_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
         	hideLists();
         }
 
+        private void Help_Click(object sender, System.EventArgs e)
+        {
+        	var uri = new Uri("/Help.xaml", UriKind.Relative);
+            NavigationService.Navigate(uri);
+        }
+
 
         #endregion
+
 
  
  

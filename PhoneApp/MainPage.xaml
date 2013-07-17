@@ -9,7 +9,7 @@
 	xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" x:Name="phoneApplicationPage"
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
 	x:Class="ClarinetTraining.MainPage"
-	SupportedOrientations="PortraitOrLandscape" Orientation="Landscape"
+	SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
 	shell:SystemTray.IsVisible="True"
     local:TiltEffect.IsTiltEnabled="True" Loaded="PhoneApplicationPage_Loaded_1"
     >
@@ -232,10 +232,11 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" >
             <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem x:Name="Dictionary" IsEnabled="True"  Text="Dictionary" Click="Dictionary_Click"  />
-                <shell:ApplicationBarMenuItem x:Name="Invert" IsEnabled="True"  Text="Invert Instrument" Click="Invert_Click" />
-                <shell:ApplicationBarMenuItem x:Name="Help" IsEnabled="True"  Text="Help" />
-                <shell:ApplicationBarMenuItem x:Name="About" IsEnabled="True"  Text="About" Click="About_Click"  />
+                <shell:ApplicationBarMenuItem x:Name="Dictionary" IsEnabled="True" Text="Dictionary" Click="Dictionary_Click"  />
+                <shell:ApplicationBarMenuItem x:Name="Invert" IsEnabled="True" Text="Invert Instrument" Click="Invert_Click" />
+                <shell:ApplicationBarMenuItem x:Name="hideNote" IsEnabled="True" Text="hide NoteName" Click="NoteName_Tap" />
+                <shell:ApplicationBarMenuItem x:Name="Help" IsEnabled="True" Text="Help" Click="Help_Click" />
+                <shell:ApplicationBarMenuItem x:Name="About" IsEnabled="True" Text="About" Click="About_Click"  />
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton x:Name="SoundButton" IconUri="/Assets/AppBar/sound on.png" IsEnabled="True" Text="Sound" Click="ApplicationBarIconButton_Click_1" />
             <shell:ApplicationBarIconButton x:Name="ScaleButton" IconUri="/Assets/AppBar/appbar.phone.numbersign.rest.png" IsEnabled="True" Text="Scale" Click="ScaleButton_Click" />
@@ -263,9 +264,10 @@
 					<CompositeTransform/>
 				</local:Clarinet.RenderTransform>
 			</local:Clarinet>
+            <TextBlock x:Name="NoteName" TextWrapping="Wrap" FontSize="48" Margin="10,475,152,133" Tap="NoteName_Tap" TextAlignment="Center"/>
 
-		</Grid>
-		<Button HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Background="{x:Null}" Click="Button_Click_2" Style="{StaticResource RoundButton}" >
+        </Grid>
+		<Button HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Background="{x:Null}" Click="Button_Click_2" Style="{StaticResource RoundButton}" Margin="34,60,0,0" >
 			<Canvas x:Name="Graphics" Height="51" Width="51" >
 				<Path x:Name="PauseSymbol1" Data="M30.514,2E-06 L51.031,2E-06 L51.031,51.031 L30.514,51.031 z M0,0 L20.517,0 L20.517,51.031 L0,51.031 z" Fill="{StaticResource PhoneForegroundBrush}" Height="40.032" Canvas.Left="5.5" Stretch="Fill" Canvas.Top="5.515" UseLayoutRounding="False" Width="40.031" Visibility="Collapsed" />
 				<Path x:Name="PlaySymbol" Data="F1M169.3398,66.1689L138.9708,91.6839L138.9708,40.6529z" Fill="{StaticResource PhoneForegroundBrush}" Stretch="Fill" UseLayoutRounding="False" Height="49.031" Canvas.Left="16.602" Width="29.179" Canvas.Top="1" />
@@ -273,7 +275,7 @@
 		</Button>
 
 
-		<Rectangle x:Name="listsBackground" Fill="{StaticResource PhoneSemitransparentBrush}" Stroke="Black" Tap="listsBackground_Tap" />
+		<Rectangle x:Name="listsBackground" Fill="{StaticResource PhoneSemitransparentBrush}" Stroke="Black" Tap="listsBackground_Tap" d:IsHidden="True" />
 		<ListBox x:Name="ScaleList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="ScaleList_SelectionChanged" Width="480" HorizontalAlignment="Right" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" Visibility="Collapsed" >
 			<ListBox.Projection>
 				<PlaneProjection/>

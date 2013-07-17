@@ -12,14 +12,24 @@ namespace ClarinetTraining
 {
     public partial class DictionaryItem : UserControl
     {
+        ClarinetSound sound = new ClarinetSound();
+        Note currentNote;
         public DictionaryItem()
         {
             InitializeComponent();
         }
 
         public void setNote(string n){
-            sheet.showNote(new Note(n));
+            var note = new Note(n);
+            currentNote = note;
+            sheet.showNote(currentNote);
             clarinet.showNote(n);
+            NoteName.Text = note.ToString("");
+        }
+
+        private void playbt_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            sound.playNote(currentNote);
         }
     }
 }

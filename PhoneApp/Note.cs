@@ -58,13 +58,13 @@ namespace ClarinetTraining
         public string ToString(string format)
         {
 
-            return notesKey[note] + (sus ? "#" : "") + (bmol ? "b" : "") + (octave+1).ToString() ;
+            return notesKey[note] + (sus ? "#" : "") + (bmol ? "b" : "") + (format=="s"?(octave+1).ToString():"") ;
 
         }
         public override string ToString()
         {
 
-            return this.ToString("");
+            return this.ToString("s");
 
         }
 

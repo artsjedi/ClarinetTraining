@@ -73,6 +73,9 @@
     <Compile Include="DictionaryItem.xaml.cs">
       <DependentUpon>DictionaryItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -123,6 +126,10 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Help.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -141,7 +148,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Shortcuts\Thumbs.db" />
     <None Include="Properties\AppManifest.xml">
       <SubType>Designer</SubType>
     </None>
@@ -161,12 +167,24 @@
     </Content>
     <Content Include="Assets\basecircle.png" />
     <Content Include="Assets\Lirum.png" />
-    <Content Include="Assets\Shortcuts\Bookmarks.png" />
-    <Content Include="Assets\Shortcuts\Facebook alt 1.png" />
-    <Content Include="Assets\Shortcuts\Internet.png" />
-    <Content Include="Assets\Shortcuts\Lirum.png" />
-    <Content Include="Assets\Shortcuts\Twitter NEW.png" />
-    <Content Include="Assets\Shortcuts\Windows Marketplace.png" />
+    <Content Include="Assets\Shortcuts\Bookmarks.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shortcuts\Facebook alt 1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shortcuts\Internet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shortcuts\Lirum.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shortcuts\Twitter NEW.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Shortcuts\Windows Marketplace.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\Sounds\A#1.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -310,6 +328,14 @@
     </Content>
     <Content Include="Assets\transport.pause.png" />
     <Content Include="Assets\transport.play.png" />
+    <Content Include="Assets\tutorial\tutorial-01.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\tutorial\tutorial-01w.jpg" />
+    <Content Include="Assets\tutorial\tutorial-02.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\tutorial\tutorial-02w.jpg" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>

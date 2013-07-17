@@ -52,7 +52,7 @@ namespace ClarinetTraining
             Canvas.SetTop(Sus, -1000);
             Canvas.SetTop(Bmol, -1000);
             Canvas.SetTop(noteSymbol, -1000);
-            NoteName.Text = "";
+             
 
         }
 
@@ -95,7 +95,7 @@ namespace ClarinetTraining
                 Bmol.Visibility = n.bmol ? Visibility.Visible : Visibility.Collapsed;
             }
 
-            NoteName.Text = n.ToString();
+            
 
             //show/hide upper/lower lines 
             foreach (var l in SheetupperLines)
