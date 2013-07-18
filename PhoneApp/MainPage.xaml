@@ -234,7 +234,7 @@
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem x:Name="Dictionary" IsEnabled="True" Text="Dictionary" Click="Dictionary_Click"  />
                 <shell:ApplicationBarMenuItem x:Name="Invert" IsEnabled="True" Text="Invert Instrument" Click="Invert_Click" />
-                <shell:ApplicationBarMenuItem x:Name="hideNote" IsEnabled="True" Text="hide NoteName" Click="NoteName_Tap" />
+                <shell:ApplicationBarMenuItem x:Name="hideNote" IsEnabled="True" Text="toggle Note Name" Click="NoteName_Tap" />
                 <shell:ApplicationBarMenuItem x:Name="Help" IsEnabled="True" Text="Help" Click="Help_Click" />
                 <shell:ApplicationBarMenuItem x:Name="About" IsEnabled="True" Text="About" Click="About_Click"  />
             </shell:ApplicationBar.MenuItems>
@@ -248,10 +248,10 @@
     <Grid>
 		<Grid >
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="285*"/>
-				<ColumnDefinition Width="214*"/>
+				<ColumnDefinition Width="199*"/>
+				<ColumnDefinition Width="129*"/>
 			</Grid.ColumnDefinitions>
-			<local:Sheet x:Name="sheet" VerticalAlignment="Center" Height="Auto" Width="Auto" RenderTransformOrigin="0.5,0.5" >
+			<local:Sheet x:Name="sheet" VerticalAlignment="Stretch" Width="Auto" RenderTransformOrigin="0.5,0.5" >
 				<local:Sheet.RenderTransform>
 					<CompositeTransform/>
 				</local:Sheet.RenderTransform>
@@ -264,10 +264,10 @@
 					<CompositeTransform/>
 				</local:Clarinet.RenderTransform>
 			</local:Clarinet>
-            <TextBlock x:Name="NoteName" TextWrapping="Wrap" FontSize="48" Margin="10,475,152,133" Tap="NoteName_Tap" TextAlignment="Center"/>
+            <TextBlock x:Name="NoteName" TextWrapping="Wrap" FontSize="48" Margin="10,475,152,5" Tap="NoteName_Tap" TextAlignment="Center"/>
 
         </Grid>
-		<Button HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Background="{x:Null}" Click="Button_Click_2" Style="{StaticResource RoundButton}" Margin="34,60,0,0" >
+		<Button HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Background="{x:Null}" Click="Button_Click_2" Style="{StaticResource RoundButton}" Margin="20,38,0,0" >
 			<Canvas x:Name="Graphics" Height="51" Width="51" >
 				<Path x:Name="PauseSymbol1" Data="M30.514,2E-06 L51.031,2E-06 L51.031,51.031 L30.514,51.031 z M0,0 L20.517,0 L20.517,51.031 L0,51.031 z" Fill="{StaticResource PhoneForegroundBrush}" Height="40.032" Canvas.Left="5.5" Stretch="Fill" Canvas.Top="5.515" UseLayoutRounding="False" Width="40.031" Visibility="Collapsed" />
 				<Path x:Name="PlaySymbol" Data="F1M169.3398,66.1689L138.9708,91.6839L138.9708,40.6529z" Fill="{StaticResource PhoneForegroundBrush}" Stretch="Fill" UseLayoutRounding="False" Height="49.031" Canvas.Left="16.602" Width="29.179" Canvas.Top="1" />
