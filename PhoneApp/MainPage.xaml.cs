@@ -35,7 +35,7 @@ namespace ClarinetTraining
         private int[] chromaticNot = new int[] { 0, 0, 1, 1, 2, 3, 3, 4, 4, 5, 5, 6 };
         private int[] chromaticSus = new int[] { 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0 };
 
-        private int[] intervalsValues = { 250, 500, 1000, 2000, 3000, 5000, 7000, 15000, 30000 };
+        private int[] intervalsValues = { 250, 500, 1000, 1500, 2000, 3000, 5000, 7000, 15000, 30000 };
 
         private Random rnd = new Random();
 

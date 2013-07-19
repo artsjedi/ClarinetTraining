@@ -295,8 +295,9 @@
 			</ListBox.Projection>
 			<ListBoxItem Content="1/4 s" Padding="0,15,0,0"  />
 			<ListBoxItem Content="1/2 s" Padding="0,15,0,0"  />
-			<ListBoxItem Content="1 s" Padding="0,15,0,0" />
-			<ListBoxItem Content="2 s" Padding="0,15,0,0"/>
+            <ListBoxItem Content="1 s" Padding="0,15,0,0" />
+            <ListBoxItem Content="1.5 s" Padding="0,15,0,0" />
+            <ListBoxItem Content="2 s" Padding="0,15,0,0"/>
 			<ListBoxItem Content="3 s" Padding="0,15,0,0"    />
 			<ListBoxItem Content="5 s" Padding="0,15,0,0"    />
 			<ListBoxItem Content="7 s" Padding="0,15,0,0"    />
