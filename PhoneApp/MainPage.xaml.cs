@@ -37,6 +37,8 @@ namespace ClarinetTraining
 
         private int[] intervalsValues = { 250, 500, 1000, 1500, 2000, 3000, 5000, 7000, 15000, 30000 };
 
+        private int[] notesId = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 };
+
         private Random rnd = new Random();
 
         public MainPage()
@@ -161,12 +163,18 @@ namespace ClarinetTraining
             bool sound = true;
             int timeInterval = 3;
             int scale = 0;
-            int range = 0;
+            int rangeMin = 0;
+            int rangeMax = 0;
             bool NameVisibility = false;
 
             IsolatedStorageSettings.ApplicationSettings.TryGetValue("inverted", out inverted);
             IsolatedStorageSettings.ApplicationSettings.TryGetValue("scale", out scale);
-            IsolatedStorageSettings.ApplicationSettings.TryGetValue("range", out range);
+
+            if (!IsolatedStorageSettings.ApplicationSettings.TryGetValue("rangeMin", out rangeMin))
+                rangeMin = 8;
+
+            if (!IsolatedStorageSettings.ApplicationSettings.TryGetValue("rangeMax", out rangeMax))
+                rangeMax = 18;
             
             if (IsolatedStorageSettings.ApplicationSettings.TryGetValue("sound", out sound))
                 setSound(sound);
@@ -174,10 +182,11 @@ namespace ClarinetTraining
             if (IsolatedStorageSettings.ApplicationSettings.TryGetValue("nameVisibility", out NameVisibility))
                 setNameVisibility(NameVisibility);
 
-            if (!IsolatedStorageSettings.ApplicationSettings.TryGetValue("time", out timeInterval)) ;
-            timeInterval = 3;
+            if (!IsolatedStorageSettings.ApplicationSettings.TryGetValue("time", out timeInterval)) 
+                timeInterval = 3;
 
-            RangeList.SelectedIndex = range;
+            RangeMin.SelectedIndex = rangeMin;
+            RangeMax.SelectedIndex = rangeMax;
             IntervalList.SelectedIndex = timeInterval;
             ScaleList.SelectedIndex = scale;
             clarinet.setInverted(inverted);
@@ -208,7 +217,7 @@ namespace ClarinetTraining
         {
             var n = new Note();
 
-            var newNote = (note + scale) % 7;
+            var newNote = note;// (note + scale) % 7;
             var chromaticId = (harmonicDistances[scale] + harmonicDistances[note]) % 12;
             var diff = chromaticId - harmonicDistances[newNote];
 
@@ -228,24 +237,26 @@ namespace ClarinetTraining
         /// <param name="lower">lower limit</param>
         /// <returns>a rando note according with parameters.</returns>
         private Note randomNote(int scale=-1,int upper=29, int lower=2){
+            
             var n = new Note();
+            var noteId = lower + rnd.Next(upper+1 - lower);
+
+            var note = noteId % 7;
+            var octave = Convert.ToInt16(noteId/7);
 
             //select note
             //harmonic Scale
             if (scale <=6 )
             {
-                var note = rnd.Next(7);
-                n = getNoteVariantOnScale(scale, note);
-                n.octave = rnd.Next(4);
-
+                n = getNoteVariantOnScale(scale,note);
+                n.octave = octave;
             }
             //Any Scale
             else
             {
-
-                n.note = rnd.Next(7);
-                n.octave = rnd.Next(4);
                 var sus = rnd.Next(6);
+                n.note = note;
+                n.octave = octave;
 
                 switch (sus)
                 {
@@ -258,8 +269,8 @@ namespace ClarinetTraining
             }
 
             //limit-it
-            while (n.note + n.octave * 7 > upper) n.octave--;
-            while (n.note + n.octave * 7 < lower) n.octave++;
+            // while (n.note + n.octave * 7 > upper) n.octave--;
+            // while (n.note + n.octave * 7 < lower) n.octave++;
           
             return n;
         }
@@ -345,31 +356,54 @@ namespace ClarinetTraining
             IsolatedStorageSettings.ApplicationSettings.Save();
         }
 
-		private void RangeList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void RangeListMin_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            var listIndex = (sender as ListBox).SelectedIndex;
+            //hideLists();
+
+            if (RangeMax == null) return;
+            for (var i = 0; i < RangeMax.Items.Count; i++)
+            {
+                if (i <= listIndex)
+                {
+                    (RangeMax.Items[i] as ListBoxItem).IsEnabled = false;
+                    (RangeMax.Items[i] as ListBoxItem).IsSelected = false;
+                }
+                else
+                {
+                    (RangeMax.Items[i] as ListBoxItem).IsEnabled = true;
+                }
+            }
+
+            currentLower = notesId[listIndex];
+
+            IsolatedStorageSettings.ApplicationSettings["rangeMin"] = listIndex;
+            IsolatedStorageSettings.ApplicationSettings.Save();
+        }
+
+        private void RangeListMax_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
 
-            var i = (sender as ListBox).SelectedIndex;
-        	switch(i ){
-				case 0: 
-					currentLower = 2;
-					currentUpper = 29;
-					break;
-				case 1: 
-					currentUpper= 29;
-					currentLower=18;
-					break;
-				case 2: 
-					currentUpper= 17;
-					currentLower=9;
-					break;
-				case 3: 
-					currentUpper= 9;
-					currentLower=2;
-					break;
-			}
-			hideLists();
+            var listIndex = (sender as ListBox).SelectedIndex;
+			//hideLists();
+            if (RangeMin == null) return;
+            for (var i = 0; i < RangeMin.Items.Count; i++)
+            {
+                if (i >= listIndex)
+                {
 
-            IsolatedStorageSettings.ApplicationSettings["range"] = i;
+                    (RangeMin.Items[i] as ListBoxItem).IsEnabled = false;
+                    (RangeMin.Items[i] as ListBoxItem).IsSelected = false;
+                }
+                else
+                {
+                    (RangeMin.Items[i] as ListBoxItem).IsEnabled = true;
+                }
+            }
+
+            currentUpper = notesId[listIndex];
+
+            IsolatedStorageSettings.ApplicationSettings["rangeMax"] = listIndex;
             IsolatedStorageSettings.ApplicationSettings.Save();
         }
 
@@ -420,7 +454,6 @@ namespace ClarinetTraining
             NavigationService.Navigate(uri);
         }
 
-
         private void Invert_Click(object sender, EventArgs e)
         {
             clarinet.setInverted(!clarinet.getInverted());
@@ -436,7 +469,6 @@ namespace ClarinetTraining
             IsolatedStorageSettings.ApplicationSettings.Save();
         }
 
-
         private void listsBackground_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
         	hideLists();
@@ -451,8 +483,5 @@ namespace ClarinetTraining
 
         #endregion
 
-
- 
- 
     }
 }

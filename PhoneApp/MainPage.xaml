@@ -9,7 +9,7 @@
 	xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" x:Name="phoneApplicationPage"
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
 	x:Class="ClarinetTraining.MainPage"
-	SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+	SupportedOrientations="PortraitOrLandscape" Orientation="Landscape"
 	shell:SystemTray.IsVisible="True"
     local:TiltEffect.IsTiltEnabled="True" Loaded="PhoneApplicationPage_Loaded_1"
     >
@@ -246,17 +246,25 @@
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
     <Grid>
-		<Grid >
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="4*"/>
+    		<RowDefinition Height="83*"/>
+    	</Grid.RowDefinitions>
+		<Grid Grid.Row="1" >
+			<Grid.RowDefinitions>
+				<RowDefinition Height="451*"/>
+				<RowDefinition Height="213*"/>
+			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="199*"/>
 				<ColumnDefinition Width="129*"/>
 			</Grid.ColumnDefinitions>
-			<local:Sheet x:Name="sheet" VerticalAlignment="Stretch" Width="Auto" RenderTransformOrigin="0.5,0.5" >
+			<local:Sheet x:Name="sheet" VerticalAlignment="Stretch" Width="Auto" RenderTransformOrigin="0.5,0.5" Margin="0" Grid.RowSpan="2" Height="Auto" >
 				<local:Sheet.RenderTransform>
 					<CompositeTransform/>
 				</local:Sheet.RenderTransform>
 			</local:Sheet>
-			<local:Clarinet x:Name="clarinet" Grid.Column="1" Height="Auto" Width="Auto" RenderTransformOrigin="0.5,0.5">
+			<local:Clarinet x:Name="clarinet" Grid.Column="1" Height="Auto" Width="Auto" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
 				<local:Clarinet.Projection>
 					<PlaneProjection/>
 				</local:Clarinet.Projection>
@@ -264,10 +272,10 @@
 					<CompositeTransform/>
 				</local:Clarinet.RenderTransform>
 			</local:Clarinet>
-            <TextBlock x:Name="NoteName" TextWrapping="Wrap" FontSize="48" Margin="10,475,152,5" Tap="NoteName_Tap" TextAlignment="Center"/>
+            <TextBlock x:Name="NoteName" TextWrapping="Wrap" FontSize="48" Margin="25,33,141,0" Tap="NoteName_Tap" TextAlignment="Center" VerticalAlignment="Top" Height="68" Grid.Row="1"/>
 
         </Grid>
-		<Button HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Background="{x:Null}" Click="Button_Click_2" Style="{StaticResource RoundButton}" Margin="20,38,0,0" >
+		<Button HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Background="{x:Null}" Click="Button_Click_2" Style="{StaticResource RoundButton}" Margin="20,3,0,0" Grid.Row="1" >
 			<Canvas x:Name="Graphics" Height="51" Width="51" >
 				<Path x:Name="PauseSymbol1" Data="M30.514,2E-06 L51.031,2E-06 L51.031,51.031 L30.514,51.031 z M0,0 L20.517,0 L20.517,51.031 L0,51.031 z" Fill="{StaticResource PhoneForegroundBrush}" Height="40.032" Canvas.Left="5.5" Stretch="Fill" Canvas.Top="5.515" UseLayoutRounding="False" Width="40.031" Visibility="Collapsed" />
 				<Path x:Name="PlaySymbol" Data="F1M169.3398,66.1689L138.9708,91.6839L138.9708,40.6529z" Fill="{StaticResource PhoneForegroundBrush}" Stretch="Fill" UseLayoutRounding="False" Height="49.031" Canvas.Left="16.602" Width="29.179" Canvas.Top="1" />
@@ -275,8 +283,8 @@
 		</Button>
 
 
-		<Rectangle x:Name="listsBackground" Fill="{StaticResource PhoneSemitransparentBrush}" Stroke="Black" Tap="listsBackground_Tap" d:IsHidden="True" />
-		<ListBox x:Name="ScaleList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="ScaleList_SelectionChanged" Width="480" HorizontalAlignment="Right" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" Visibility="Collapsed" >
+		<Rectangle x:Name="listsBackground" Fill="{StaticResource PhoneSemitransparentBrush}" Stroke="Black" Tap="listsBackground_Tap" d:IsHidden="True" Grid.RowSpan="2" />
+		<ListBox x:Name="ScaleList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="ScaleList_SelectionChanged" Width="480" HorizontalAlignment="Right" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" Visibility="Collapsed" Grid.Row="1" >
 			<ListBox.Projection>
 				<PlaneProjection/>
 			</ListBox.Projection>
@@ -289,7 +297,7 @@
 			<ListBoxItem Content="B Maj" Padding="0,15,0,0"  />
 			<ListBoxItem Content="All  " Padding="0,15,0,0"  />
 		</ListBox>
-		<ListBox x:Name="IntervalList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="IntervalList_SelectionChanged" Width="480" HorizontalAlignment="Right" Visibility="Collapsed" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" >
+		<ListBox x:Name="IntervalList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="IntervalList_SelectionChanged" Width="480" HorizontalAlignment="Right" Visibility="Collapsed" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" Grid.Row="1" >
 			<ListBox.Projection>
 				<PlaneProjection/>
 			</ListBox.Projection>
@@ -305,18 +313,95 @@
 			<ListBoxItem Content="30 s" Padding="0,15,0,0"   />
 
 		</ListBox>
-		<ListBox x:Name="RangeList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="RangeList_SelectionChanged" Width="480" HorizontalAlignment="Right" Visibility="Collapsed" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" >
-			<ListBox.Projection>
-				<PlaneProjection/>
-			</ListBox.Projection>
-			<ListBoxItem Content="All" Padding="0,15,0,0"/>
-			<ListBoxItem Content="Upper" Padding="0,15,0,0"   />
-			<ListBoxItem Content="Middle" Padding="0,15,0,0"  />
-			<ListBoxItem Content="Lower" Padding="0,15,0,0"   />
-		</ListBox>
+		<Grid  x:Name="RangeList"  Height="480" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="480" Background="{StaticResource PhoneChromeBrush}" Grid.Row="1" Visibility="Collapsed" >
+			<Grid.RowDefinitions>
+				<RowDefinition Height="7*"/>
+				<RowDefinition Height="33*"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="121*"/>
+				<ColumnDefinition Width="119*"/>
+			</Grid.ColumnDefinitions>
+			<ListBox x:Name="RangeMin" 
+			Background="{StaticResource PhoneChromeBrush}" 
+			FontSize="32" BorderThickness="32,10,0,10" 
+			BorderBrush="{StaticResource PhoneChromeBrush}" 
+			RenderTransformOrigin="0.5,0.5" 
+			SelectionChanged="RangeListMin_SelectionChanged" 
+			FontFamily="Segoe WP Light" 
+			UseLayoutRounding="True" Grid.Row="1" Margin="0,0,0,10" >
+                <ListBoxItem Content="E1"/>
+                <ListBoxItem Content="F1"/>
+                <ListBoxItem Content="G1"/>
+                <ListBoxItem Content="A1"/>
+                <ListBoxItem Content="B1"/>
+                <ListBoxItem Content="C2"/>
+                <ListBoxItem Content="D2"/>
+                <ListBoxItem Content="E2"/>
+                <ListBoxItem Content="F2"/>
+                <ListBoxItem Content="G2"/>
+                <ListBoxItem Content="A2"/>
+                <ListBoxItem Content="B2"/>
+                <ListBoxItem Content="C3"/>
+                <ListBoxItem Content="D3"/>
+                <ListBoxItem Content="E3"/>
+                <ListBoxItem Content="F3"/>
+                <ListBoxItem Content="G3"/>
+                <ListBoxItem Content="A3"/>
+                <ListBoxItem Content="B3"/>
+                <ListBoxItem Content="C4"/>
+                <ListBoxItem Content="D4"/>
+                <ListBoxItem Content="E4"/>
+                <ListBoxItem Content="F4"/>
+                <ListBoxItem Content="G4"/>
+                <ListBoxItem Content="A4"/>
+            </ListBox>
+			<ListBox x:Name="RangeMax" 
+				Background="{StaticResource PhoneChromeBrush}" 
+				FontSize="32" BorderThickness="32,10,0,10" 
+				BorderBrush="{StaticResource PhoneChromeBrush}" 
+				RenderTransformOrigin="0.5,0.5" 
+				SelectionChanged="RangeListMax_SelectionChanged" 
+				FontFamily="Segoe WP Light" 
+				UseLayoutRounding="True" Grid.Column="1" Grid.Row="1" Margin="0,0,0,10" >
+
+                <ListBoxItem Content="E1"/>
+                <ListBoxItem Content="F1"/>
+                <ListBoxItem Content="G1"/>
+                <ListBoxItem Content="A1"/>
+                <ListBoxItem Content="B1"/>
+                <ListBoxItem Content="C2"/>
+                <ListBoxItem Content="D2"/>
+                <ListBoxItem Content="E2"/>
+                <ListBoxItem Content="F2"/>
+                <ListBoxItem Content="G2"/>
+                <ListBoxItem Content="A2"/>
+                <ListBoxItem Content="B2"/>
+                <ListBoxItem Content="C3"/>
+                <ListBoxItem Content="D3"/>
+                <ListBoxItem Content="E3"/>
+                <ListBoxItem Content="F3"/>
+                <ListBoxItem Content="G3"/>
+                <ListBoxItem Content="A3"/>
+                <ListBoxItem Content="B3"/>
+                <ListBoxItem Content="C4"/>
+                <ListBoxItem Content="D4"/>
+                <ListBoxItem Content="E4"/>
+                <ListBoxItem Content="F4"/>
+                <ListBoxItem Content="G4"/>
+                <ListBoxItem Content="A4"/>
+            </ListBox>
+			<TextBlock TextWrapping="Wrap" Text="Min" Margin="30,15,0,0" FontSize="48"/>
+			<TextBlock TextWrapping="Wrap" Text="Max" Grid.Column="2" Margin="30,15,0,0" FontSize="48"/>
+
+            <Grid.Projection>
+                <PlaneProjection/>
+            </Grid.Projection>
+        </Grid>
+		<TextBlock HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" Text="CLARINET TRAINING" VerticalAlignment="Top" Width="480" Grid.RowSpan="2"/>
 
 
-	</Grid>
+    </Grid>
 
 
 </phone:PhoneApplicationPage>
