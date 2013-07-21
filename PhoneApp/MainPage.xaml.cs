@@ -91,7 +91,6 @@ namespace ClarinetTraining
         {
             if (timer != null) timer.Interval = new TimeSpan(0, 0, 0, 0, delay);
         }
-
         
         private void setSound(bool value)
         {
@@ -152,7 +151,7 @@ namespace ClarinetTraining
             displayRandomNote();
         }
 
-        /////////////////////////////////////////////////// Saved Configuration //////////////////////////
+        #region /////////////////////////////////////////////////// Saved Configuration //////////////////////////
 
         /// <summary>
         /// Loads user configuration and configures UI
@@ -192,7 +191,9 @@ namespace ClarinetTraining
             clarinet.setInverted(inverted);
             
         }
+        #endregion
 
+        #region future another class
         /////////////////////////////////////////////////// this below shoud be in another class /////////
         
         /// <summary>
@@ -214,19 +215,21 @@ namespace ClarinetTraining
         /// <param name="note">Notes</param>
         /// <returns>Return a new Note and if it is Bmol or Sustenide</returns>
         private Note getNoteVariantOnScale(int scale, int note)
-        {
-            var n = new Note();
-
-            var newNote = note;// (note + scale) % 7;
-            var chromaticId = (harmonicDistances[scale] + harmonicDistances[note]) % 12;
-            var diff = chromaticId - harmonicDistances[newNote];
-
-            n.note = newNote;
-
-            if (diff == 1) n.sus = true;
-            if (diff == -1) n.bmol = true;
-
-            return n;
+        {                                                                                      
+                                                                                                    //n s
+            var n = new Note();                                                                     //3 5 
+                                                                                                    //3 5 -2|5 note on Scale
+            var noteOnScale = ((note - scale)+7) % 7;                                               //
+                                                                                                    //4 5 5 
+            var chromaticId = (harmonicDistances[scale] + harmonicDistances[noteOnScale]) % 12;     //3 5 5 18|6
+            var diff = chromaticId - harmonicDistances[note];                                    //3 5 5 6 5
+                                                                                                    //
+            n.note = note;                                                                       //
+                                                                                                    //
+            if (diff == 1) n.sus = true;                                                            //
+            if (diff == -1) n.bmol = true;                                                          //
+                                                                                                    //
+            return n;                                                                               //
         }
 
         /// <summary>
@@ -274,8 +277,7 @@ namespace ClarinetTraining
           
             return n;
         }
-        
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
+    #endregion
 
         #region callbacks
 
