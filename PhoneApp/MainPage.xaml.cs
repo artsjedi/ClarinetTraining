@@ -22,7 +22,8 @@ namespace ClarinetTraining
         private int currentUpper = 29;
         private int currentLower = 2;
         private bool currentNameVisibility = true;
-		
+        private int currentTranspose = 0;
+
 		private int _delay = 2000; //ms
         private DispatcherTimer timer;
         private bool playing=false;
@@ -96,10 +97,28 @@ namespace ClarinetTraining
         {
             soundOn = value;
 
-            var on =    new Uri("/Assets/AppBar/sound on.png",UriKind.Relative);
-            var off =   new Uri("/Assets/AppBar/sound off.png",UriKind.Relative);
+            if (!soundOn)
+            {
+                soundOnIcon.Visibility = System.Windows.Visibility.Collapsed;
+                SoundOffIcon.Visibility = System.Windows.Visibility.Visible;
 
-            (ApplicationBar.Buttons[0] as ApplicationBarIconButton).IconUri = value ? on : off;
+            }
+            else
+            {
+                soundOnIcon.Visibility = System.Windows.Visibility.Visible;
+                SoundOffIcon.Visibility = System.Windows.Visibility.Collapsed;
+            }
+
+
+            //var on =    new Uri("/Assets/AppBar/sound on.png",UriKind.Relative);
+            //var off =   new Uri("/Assets/AppBar/sound off.png",UriKind.Relative);
+
+            //(ApplicationBar.Buttons[0] as ApplicationBarIconButton).IconUri = value ? on : off;
+        }
+
+        private void setTranspose(int tranpose)
+        {
+            this.currentTranspose = tranpose;
         }
 
         private void startShowing()
@@ -119,11 +138,10 @@ namespace ClarinetTraining
         /// <param name="n"></param>
         private void displayNote(Note n)
         {
-
             sheet.showNote(n);
             clarinet.showNote(n);
             NoteName.Text = n.ToString("");
-            if (soundOn) sound.playNote(n);
+            if (soundOn) sound.playNote(n,currentTranspose);
         }
 
         /// <summary>
@@ -139,7 +157,7 @@ namespace ClarinetTraining
                 
             sheet.showNote(n);
             NoteName.Text = n.ToString("");
-            if (soundOn) sound.playNote(n);
+            if (soundOn) sound.playNote(n, currentTranspose);
         }
 
         /// <summary>
@@ -165,9 +183,13 @@ namespace ClarinetTraining
             int rangeMin = 0;
             int rangeMax = 0;
             bool NameVisibility = false;
-
+            int tunning = 1;
+            
             IsolatedStorageSettings.ApplicationSettings.TryGetValue("inverted", out inverted);
             IsolatedStorageSettings.ApplicationSettings.TryGetValue("scale", out scale);
+
+            if (!IsolatedStorageSettings.ApplicationSettings.TryGetValue("tunning", out tunning))
+                tunning = 1;
 
             if (!IsolatedStorageSettings.ApplicationSettings.TryGetValue("rangeMin", out rangeMin))
                 rangeMin = 8;
@@ -189,7 +211,7 @@ namespace ClarinetTraining
             IntervalList.SelectedIndex = timeInterval;
             ScaleList.SelectedIndex = scale;
             clarinet.setInverted(inverted);
-            
+            VoiceList.SelectedIndex = tunning;
         }
         #endregion
 
@@ -281,7 +303,7 @@ namespace ClarinetTraining
 
         #region callbacks
 
-        private void ApplicationBarIconButton_Click_1(object sender, EventArgs e)
+        private void SoundOnOffClick(object sender, EventArgs e)
         {
             
             setSound(!soundOn); 
@@ -311,6 +333,7 @@ namespace ClarinetTraining
 			ScaleList.Visibility = System.Windows.Visibility.Visible;
             IntervalList.Visibility = System.Windows.Visibility.Collapsed;
             RangeList.Visibility = System.Windows.Visibility.Collapsed;
+            VoiceList.Visibility = System.Windows.Visibility.Collapsed;
             OpenList.Begin();
 
 
@@ -323,6 +346,7 @@ namespace ClarinetTraining
 			ScaleList.Visibility = System.Windows.Visibility.Collapsed;
             RangeList.Visibility = System.Windows.Visibility.Collapsed;
             IntervalList.Visibility = System.Windows.Visibility.Visible;
+            VoiceList.Visibility = System.Windows.Visibility.Collapsed;
             OpenList.Begin();
         }
 
@@ -333,7 +357,37 @@ namespace ClarinetTraining
             ScaleList.Visibility = System.Windows.Visibility.Collapsed;
             RangeList.Visibility = System.Windows.Visibility.Visible;
             IntervalList.Visibility = System.Windows.Visibility.Collapsed;
+            VoiceList.Visibility = System.Windows.Visibility.Collapsed;
             OpenList.Begin();
+        }
+
+        private void VoiceList_Click(object sender, System.EventArgs e)
+        {
+            ApplicationBar.IsVisible = false;
+            listsBackground.Visibility = System.Windows.Visibility.Visible;
+            ScaleList.Visibility = System.Windows.Visibility.Collapsed;
+            RangeList.Visibility = System.Windows.Visibility.Collapsed;
+            IntervalList.Visibility = System.Windows.Visibility.Collapsed;
+            VoiceList.Visibility = System.Windows.Visibility.Visible;
+            OpenList.Begin();
+        }
+
+        private void VoiceList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+        	hideLists();
+            int i = (sender as ListBox).SelectedIndex;
+            int transpose = 0;
+            switch (i)
+            {
+                case 0: transpose = 0; TuneName.Text = "Natural"; break;  //Natural
+                case 1: transpose = -2; TuneName.Text = "Bb"; break; //Bb
+                case 2: transpose = +3;  TuneName.Text = "Eb";break; //Eb
+            }
+
+            setTranspose(transpose);
+
+            IsolatedStorageSettings.ApplicationSettings["tunning"] = i;
+            IsolatedStorageSettings.ApplicationSettings.Save();
         }
 
         private void IntervalList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)

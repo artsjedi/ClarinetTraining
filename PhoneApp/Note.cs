@@ -16,9 +16,10 @@ namespace ClarinetTraining
         public static string[] notesKey = new string[] { "C", "D", "E", "F", "G", "A", "B" };
         public static string[] notesName = new string[] { "Do", "Re", "Mi", "Fa", "Sol", "La", "Si" };
 
-        public Note()
-        {
-        }
+
+
+        #region Constructors
+        public Note(){}
 
         public Note(string str)
         {
@@ -46,14 +47,15 @@ namespace ClarinetTraining
             }
         }
 
-        public Note(int note, bool sus = false, bool bmol = false, int scale = 0)
+        public Note(int note, bool sus = false, bool bmol = false, int octave = 0)
         {
             this.note = note;
             this.sus = sus;
             this.bmol = bmol;
-            this.octave = scale;
+            this.octave = octave;
         }
 
+        #endregion
 
         public string ToString(string format)
         {
@@ -61,11 +63,32 @@ namespace ClarinetTraining
             return notesKey[note] + (sus ? "#" : "") + (bmol ? "b" : "") + (format=="s"?(octave+1).ToString():"") ;
 
         }
+        
         public override string ToString()
         {
 
             return this.ToString("s");
 
+        }
+
+        public Note getTransposed(int transpose)
+        {
+            var n = new Note(note,sus,bmol,octave);
+            n.note += transpose;
+
+            while (n.note >= 7)
+            {
+                n.note -= 7;
+                n.octave++;
+            }
+
+            while (n.note < 0)
+            {
+                n.note += 7;
+                n.octave--;
+            }
+
+            return n;
         }
 
         public Note normalize()

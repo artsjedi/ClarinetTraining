@@ -4,7 +4,7 @@
   <Languages xmlns="">
     <Language code="en" />
   </Languages>
-  <App xmlns="" ProductID="{c09c82fa-4736-4cbe-a26c-95b7a5459535}" Title="Clarinet Training" RuntimeType="Silverlight" Version="1.0.5.0" Genre="apps.normal" Author="ClarinetTraining author" Description="Apllication for training notes on Clarinet" Publisher="ClarinetTraining" BitsPerPixel="16" PublisherID="{cef3bdd7-7ca0-4b34-98ba-e642d13f5649}">
+  <App xmlns="" ProductID="{c09c82fa-4736-4cbe-a26c-95b7a5459535}" Title="Clarinet Training" RuntimeType="Silverlight" Version="1.0.7.0" Genre="apps.normal" Author="ClarinetTraining author" Description="Apllication for training notes on Clarinet" Publisher="ClarinetTraining" BitsPerPixel="16" PublisherID="{cef3bdd7-7ca0-4b34-98ba-e642d13f5649}">
     <IconPath IsRelative="true" IsResource="false">100.png</IconPath>
     <Capabilities>
     </Capabilities>

@@ -9,7 +9,7 @@
 	xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" x:Name="phoneApplicationPage"
 	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
 	x:Class="ClarinetTraining.MainPage"
-	SupportedOrientations="PortraitOrLandscape" Orientation="Landscape"
+	SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
 	shell:SystemTray.IsVisible="True"
     local:TiltEffect.IsTiltEnabled="True" Loaded="PhoneApplicationPage_Loaded_1"
     >
@@ -50,6 +50,14 @@
                         <CubicEase EasingMode="EaseOut"/>
                     </EasingDoubleKeyFrame.EasingFunction>
                 </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="VoiceList">
+            	<EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+            	<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Name="CloseList">
@@ -136,6 +144,31 @@
                     </DiscreteObjectKeyFrame.Value>
                 </DiscreteObjectKeyFrame>
             </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="VoiceList" d:IsOptimized="True">
+            	<DoubleAnimation.EasingFunction>
+            		<CubicEase EasingMode="EaseOut"/>
+            	</DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="VoiceList">
+		<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+		<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="90">
+			<EasingDoubleKeyFrame.EasingFunction>
+				<CubicEase EasingMode="EaseOut"/>
+			</EasingDoubleKeyFrame.EasingFunction>
+		</EasingDoubleKeyFrame>
+	</DoubleAnimationUsingKeyFrames>
+	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="VoiceList">
+		<DiscreteObjectKeyFrame KeyTime="0">
+			<DiscreteObjectKeyFrame.Value>
+				<Visibility>Visible</Visibility>
+			</DiscreteObjectKeyFrame.Value>
+		</DiscreteObjectKeyFrame>
+		<DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+			<DiscreteObjectKeyFrame.Value>
+				<Visibility>Collapsed</Visibility>
+			</DiscreteObjectKeyFrame.Value>
+		</DiscreteObjectKeyFrame>
+	</ObjectAnimationUsingKeyFrames>
         </Storyboard>
         <Style x:Key="RoundButton" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
@@ -234,11 +267,12 @@
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem x:Name="Dictionary" IsEnabled="True" Text="Dictionary" Click="Dictionary_Click"  />
                 <shell:ApplicationBarMenuItem x:Name="Invert" IsEnabled="True" Text="Invert Instrument" Click="Invert_Click" />
+                <shell:ApplicationBarMenuItem x:Name="SoundOnOff" IsEnabled="True" Text="Invert Instrument" Click="Invert_Click" />
                 <shell:ApplicationBarMenuItem x:Name="hideNote" IsEnabled="True" Text="toggle Note Name" Click="NoteName_Tap" />
                 <shell:ApplicationBarMenuItem x:Name="Help" IsEnabled="True" Text="Help" Click="Help_Click" />
                 <shell:ApplicationBarMenuItem x:Name="About" IsEnabled="True" Text="About" Click="About_Click"  />
             </shell:ApplicationBar.MenuItems>
-            <shell:ApplicationBarIconButton x:Name="SoundButton" IconUri="/Assets/AppBar/sound on.png" IsEnabled="True" Text="Sound" Click="ApplicationBarIconButton_Click_1" />
+            <shell:ApplicationBarIconButton x:Name="VoiceListButton" IconUri="/Assets/AppBar/Tunning.png" IsEnabled="True" Text="Tunning" Click="VoiceList_Click" />
             <shell:ApplicationBarIconButton x:Name="ScaleButton" IconUri="/Assets/AppBar/appbar.phone.numbersign.rest.png" IsEnabled="True" Text="Scale" Click="ScaleButton_Click" />
             <shell:ApplicationBarIconButton x:Name="IntervalButton" IconUri="/Assets/AppBar/appbar.time.rest.png" IsEnabled="True" Text="Interval" Click="IntervalButton_Click" />
             <shell:ApplicationBarIconButton x:Name="RangeButton" IconUri="/Assets/AppBar/range.png" IsEnabled="True" Text="Range" Click="RangeButton_Click" />
@@ -247,24 +281,26 @@
     </phone:PhoneApplicationPage.ApplicationBar>
     <Grid>
     	<Grid.RowDefinitions>
-    		<RowDefinition Height="4*"/>
-    		<RowDefinition Height="83*"/>
+    		<RowDefinition Height="16*"/>
+    		<RowDefinition Height="31*"/>
+    		<RowDefinition Height="301*"/>
     	</Grid.RowDefinitions>
-		<Grid Grid.Row="1" >
+		<Grid Grid.Row="1" Grid.RowSpan="2" >
 			<Grid.RowDefinitions>
-				<RowDefinition Height="451*"/>
+				<RowDefinition Height="65*"/>
+				<RowDefinition Height="386*"/>
 				<RowDefinition Height="213*"/>
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="199*"/>
 				<ColumnDefinition Width="129*"/>
 			</Grid.ColumnDefinitions>
-			<local:Sheet x:Name="sheet" VerticalAlignment="Stretch" Width="Auto" RenderTransformOrigin="0.5,0.5" Margin="0" Grid.RowSpan="2" Height="Auto" >
+			<local:Sheet x:Name="sheet" VerticalAlignment="Stretch" Width="Auto" RenderTransformOrigin="0.5,0.5" Margin="0,-42,0,0" Grid.RowSpan="2" Height="Auto" Grid.Row="1" >
 				<local:Sheet.RenderTransform>
 					<CompositeTransform/>
 				</local:Sheet.RenderTransform>
 			</local:Sheet>
-			<local:Clarinet x:Name="clarinet" Grid.Column="1" Height="Auto" Width="Auto" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+			<local:Clarinet x:Name="clarinet" Grid.Column="1" Height="Auto" Width="Auto" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" Grid.Row="1" Margin="0,-42,0,0">
 				<local:Clarinet.Projection>
 					<PlaneProjection/>
 				</local:Clarinet.Projection>
@@ -272,132 +308,156 @@
 					<CompositeTransform/>
 				</local:Clarinet.RenderTransform>
 			</local:Clarinet>
-            <TextBlock x:Name="NoteName" TextWrapping="Wrap" FontSize="48" Margin="25,33,141,0" Tap="NoteName_Tap" TextAlignment="Center" VerticalAlignment="Top" Height="68" Grid.Row="1"/>
+            <TextBlock x:Name="NoteName" TextWrapping="Wrap" FontSize="48" Margin="25,33,141,0" Tap="NoteName_Tap" TextAlignment="Center" VerticalAlignment="Top" Height="68" Grid.Row="2"/>
+            <Button x:Name="Pelay_pause_button" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Background="{x:Null}" Click="Button_Click_2" Style="{StaticResource RoundButton}" Grid.RowSpan="2" >
+            	<Canvas x:Name="Graphics" Height="51" Width="51" >
+            		<Path x:Name="PauseSymbol1" Data="M30.514,2E-06 L51.031,2E-06 L51.031,51.031 L30.514,51.031 z M0,0 L20.517,0 L20.517,51.031 L0,51.031 z" Fill="{StaticResource PhoneForegroundBrush}" Height="40.032" Canvas.Left="5.5" Stretch="Fill" Canvas.Top="5.515" UseLayoutRounding="False" Width="40.031" Visibility="Collapsed" />
+            		<Path x:Name="PlaySymbol" Data="F1M169.3398,66.1689L138.9708,91.6839L138.9708,40.6529z" Fill="{StaticResource PhoneForegroundBrush}" Stretch="Fill" UseLayoutRounding="False" Height="49.031" Canvas.Left="16.602" Width="29.179" Canvas.Top="1" />
+            	</Canvas>
+            </Button>
+            <Button x:Name="Sound" HorizontalAlignment="Right" Height="65" VerticalAlignment="Top" Width="65" Background="{x:Null}" Style="{StaticResource RoundButton}" BorderThickness="2" Padding="3" Grid.Column="1" Click="SoundOnOffClick" >
+            	<Grid Height="39" Width="39" VerticalAlignment="Center" HorizontalAlignment="Center">
+            		<Rectangle x:Name="soundOnIcon" Fill="#FFF4F4F5" Height="39" Width="39" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.99">
+            			<Rectangle.OpacityMask>
+            				<ImageBrush Stretch="Uniform" ImageSource="/Assets/AppBar/sound on.png"/>
+            			</Rectangle.OpacityMask>
+            		</Rectangle>
+            		<Rectangle x:Name="SoundOffIcon" Fill="#FFF4F4F5" Height="39" Width="39" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.99" Visibility="Collapsed">
+            			<Rectangle.OpacityMask>
+            				<ImageBrush Stretch="Uniform" ImageSource="/Assets/AppBar/sound off.png"/>
+            			</Rectangle.OpacityMask>
+            		</Rectangle>
+            	</Grid>
+            </Button>
+            <TextBlock x:Name="TuneName" Grid.Column="1" HorizontalAlignment="Center" Height="28" Margin="103,81,16,38" TextWrapping="Wrap" Text="Bb" VerticalAlignment="Center" Width="83" TextAlignment="Center" Grid.Row="2"/>
 
         </Grid>
-		<Button HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Background="{x:Null}" Click="Button_Click_2" Style="{StaticResource RoundButton}" Margin="20,3,0,0" Grid.Row="1" >
-			<Canvas x:Name="Graphics" Height="51" Width="51" >
-				<Path x:Name="PauseSymbol1" Data="M30.514,2E-06 L51.031,2E-06 L51.031,51.031 L30.514,51.031 z M0,0 L20.517,0 L20.517,51.031 L0,51.031 z" Fill="{StaticResource PhoneForegroundBrush}" Height="40.032" Canvas.Left="5.5" Stretch="Fill" Canvas.Top="5.515" UseLayoutRounding="False" Width="40.031" Visibility="Collapsed" />
-				<Path x:Name="PlaySymbol" Data="F1M169.3398,66.1689L138.9708,91.6839L138.9708,40.6529z" Fill="{StaticResource PhoneForegroundBrush}" Stretch="Fill" UseLayoutRounding="False" Height="49.031" Canvas.Left="16.602" Width="29.179" Canvas.Top="1" />
-			</Canvas>
-		</Button>
+		<Grid x:Name="Menus" Margin="0,122,0,0" Grid.Row="2">
+			<Rectangle x:Name="listsBackground" Fill="{StaticResource PhoneSemitransparentBrush}" Stroke="Black" Tap="listsBackground_Tap" d:IsHidden="True" Margin="0,0,0,-216" />
+			<ListBox x:Name="VoiceList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="VoiceList_SelectionChanged" Width="480" HorizontalAlignment="Right" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" Visibility="Collapsed" >
+				<ListBox.Projection>
+					<PlaneProjection/>
+				</ListBox.Projection>
+				<ListBoxItem Content="Natural" Padding="0,15,0,0"  />
+				<ListBoxItem Content="Bb" Padding="0,15,0,0"  />
+				<ListBoxItem Content="Eb" Padding="0,15,0,0"  />
+			</ListBox>
+			<ListBox x:Name="ScaleList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="ScaleList_SelectionChanged" Width="480" HorizontalAlignment="Right" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" Visibility="Collapsed" >
+				<ListBox.Projection>
+					<PlaneProjection/>
+				</ListBox.Projection>
+				<ListBoxItem Content="C Maj" Padding="2,15,0,0"  />
+				<ListBoxItem Content="D Maj" Padding="0,15,0,0"  />
+				<ListBoxItem Content="E Maj" Padding="0,15,0,0"  />
+				<ListBoxItem Content="F Maj" Padding="0,15,0,0"  />
+				<ListBoxItem Content="G Maj" Padding="0,15,0,0"  />
+				<ListBoxItem Content="A Maj" Padding="0,15,0,0"  />
+				<ListBoxItem Content="B Maj" Padding="0,15,0,0"  />
+				<ListBoxItem Content="All  " Padding="0,15,0,0"  />
+			</ListBox>
+			<ListBox x:Name="IntervalList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="IntervalList_SelectionChanged" Width="480" HorizontalAlignment="Right" Visibility="Collapsed" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" >
+				<ListBox.Projection>
+					<PlaneProjection/>
+				</ListBox.Projection>
+				<ListBoxItem Content="1/4 s" Padding="0,15,0,0"  />
+				<ListBoxItem Content="1/2 s" Padding="0,15,0,0"  />
+				<ListBoxItem Content="1 s" Padding="0,15,0,0" />
+				<ListBoxItem Content="1.5 s" Padding="0,15,0,0" />
+				<ListBoxItem Content="2 s" Padding="0,15,0,0"/>
+				<ListBoxItem Content="3 s" Padding="0,15,0,0"    />
+				<ListBoxItem Content="5 s" Padding="0,15,0,0"    />
+				<ListBoxItem Content="7 s" Padding="0,15,0,0"    />
+				<ListBoxItem Content="15 s" Padding="0,15,0,0"   />
+				<ListBoxItem Content="30 s" Padding="0,15,0,0"   />
 
+			</ListBox>
+			<Grid  x:Name="RangeList"  Height="480" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="480" Background="{StaticResource PhoneChromeBrush}" Visibility="Collapsed" >
+				<Grid.RowDefinitions>
+					<RowDefinition Height="7*"/>
+					<RowDefinition Height="33*"/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="121*"/>
+					<ColumnDefinition Width="119*"/>
+				</Grid.ColumnDefinitions>
 
-		<Rectangle x:Name="listsBackground" Fill="{StaticResource PhoneSemitransparentBrush}" Stroke="Black" Tap="listsBackground_Tap" d:IsHidden="True" Grid.RowSpan="2" />
-		<ListBox x:Name="ScaleList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="ScaleList_SelectionChanged" Width="480" HorizontalAlignment="Right" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" Visibility="Collapsed" Grid.Row="1" >
-			<ListBox.Projection>
-				<PlaneProjection/>
-			</ListBox.Projection>
-			<ListBoxItem Content="C Maj" Padding="2,15,0,0"  />
-			<ListBoxItem Content="D Maj" Padding="0,15,0,0"  />
-			<ListBoxItem Content="E Maj" Padding="0,15,0,0"  />
-			<ListBoxItem Content="F Maj" Padding="0,15,0,0"  />
-			<ListBoxItem Content="G Maj" Padding="0,15,0,0"  />
-			<ListBoxItem Content="A Maj" Padding="0,15,0,0"  />
-			<ListBoxItem Content="B Maj" Padding="0,15,0,0"  />
-			<ListBoxItem Content="All  " Padding="0,15,0,0"  />
-		</ListBox>
-		<ListBox x:Name="IntervalList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="IntervalList_SelectionChanged" Width="480" HorizontalAlignment="Right" Visibility="Collapsed" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" Grid.Row="1" >
-			<ListBox.Projection>
-				<PlaneProjection/>
-			</ListBox.Projection>
-			<ListBoxItem Content="1/4 s" Padding="0,15,0,0"  />
-			<ListBoxItem Content="1/2 s" Padding="0,15,0,0"  />
-            <ListBoxItem Content="1 s" Padding="0,15,0,0" />
-            <ListBoxItem Content="1.5 s" Padding="0,15,0,0" />
-            <ListBoxItem Content="2 s" Padding="0,15,0,0"/>
-			<ListBoxItem Content="3 s" Padding="0,15,0,0"    />
-			<ListBoxItem Content="5 s" Padding="0,15,0,0"    />
-			<ListBoxItem Content="7 s" Padding="0,15,0,0"    />
-			<ListBoxItem Content="15 s" Padding="0,15,0,0"   />
-			<ListBoxItem Content="30 s" Padding="0,15,0,0"   />
+				<Grid.Projection>
+					<PlaneProjection/>
+				</Grid.Projection>
+				<ListBox x:Name="RangeMin" 
+					Background="{StaticResource PhoneChromeBrush}" 
+					FontSize="32" BorderThickness="32,10,0,10" 
+					BorderBrush="{StaticResource PhoneChromeBrush}" 
+					RenderTransformOrigin="0.5,0.5" 
+					SelectionChanged="RangeListMin_SelectionChanged" 
+					FontFamily="Segoe WP Light" 
+					UseLayoutRounding="True" Grid.Row="1" Margin="0,0,0,10" >
+					<ListBoxItem Content="E1"/>
+					<ListBoxItem Content="F1"/>
+					<ListBoxItem Content="G1"/>
+					<ListBoxItem Content="A1"/>
+					<ListBoxItem Content="B1"/>
+					<ListBoxItem Content="C2"/>
+					<ListBoxItem Content="D2"/>
+					<ListBoxItem Content="E2"/>
+					<ListBoxItem Content="F2"/>
+					<ListBoxItem Content="G2"/>
+					<ListBoxItem Content="A2"/>
+					<ListBoxItem Content="B2"/>
+					<ListBoxItem Content="C3"/>
+					<ListBoxItem Content="D3"/>
+					<ListBoxItem Content="E3"/>
+					<ListBoxItem Content="F3"/>
+					<ListBoxItem Content="G3"/>
+					<ListBoxItem Content="A3"/>
+					<ListBoxItem Content="B3"/>
+					<ListBoxItem Content="C4"/>
+					<ListBoxItem Content="D4"/>
+					<ListBoxItem Content="E4"/>
+					<ListBoxItem Content="F4"/>
+					<ListBoxItem Content="G4"/>
+					<ListBoxItem Content="A4"/>
+				</ListBox>
+				<ListBox x:Name="RangeMax" 
+					Background="{StaticResource PhoneChromeBrush}" 
+					FontSize="32" BorderThickness="32,10,0,10" 
+					BorderBrush="{StaticResource PhoneChromeBrush}" 
+					RenderTransformOrigin="0.5,0.5" 
+					SelectionChanged="RangeListMax_SelectionChanged" 
+					FontFamily="Segoe WP Light" 
+					UseLayoutRounding="True" Grid.Column="1" Grid.Row="1" Margin="0,0,0,10" >
 
-		</ListBox>
-		<Grid  x:Name="RangeList"  Height="480" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="480" Background="{StaticResource PhoneChromeBrush}" Grid.Row="1" Visibility="Collapsed" >
-			<Grid.RowDefinitions>
-				<RowDefinition Height="7*"/>
-				<RowDefinition Height="33*"/>
-			</Grid.RowDefinitions>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="121*"/>
-				<ColumnDefinition Width="119*"/>
-			</Grid.ColumnDefinitions>
-			<ListBox x:Name="RangeMin" 
-			Background="{StaticResource PhoneChromeBrush}" 
-			FontSize="32" BorderThickness="32,10,0,10" 
-			BorderBrush="{StaticResource PhoneChromeBrush}" 
-			RenderTransformOrigin="0.5,0.5" 
-			SelectionChanged="RangeListMin_SelectionChanged" 
-			FontFamily="Segoe WP Light" 
-			UseLayoutRounding="True" Grid.Row="1" Margin="0,0,0,10" >
-                <ListBoxItem Content="E1"/>
-                <ListBoxItem Content="F1"/>
-                <ListBoxItem Content="G1"/>
-                <ListBoxItem Content="A1"/>
-                <ListBoxItem Content="B1"/>
-                <ListBoxItem Content="C2"/>
-                <ListBoxItem Content="D2"/>
-                <ListBoxItem Content="E2"/>
-                <ListBoxItem Content="F2"/>
-                <ListBoxItem Content="G2"/>
-                <ListBoxItem Content="A2"/>
-                <ListBoxItem Content="B2"/>
-                <ListBoxItem Content="C3"/>
-                <ListBoxItem Content="D3"/>
-                <ListBoxItem Content="E3"/>
-                <ListBoxItem Content="F3"/>
-                <ListBoxItem Content="G3"/>
-                <ListBoxItem Content="A3"/>
-                <ListBoxItem Content="B3"/>
-                <ListBoxItem Content="C4"/>
-                <ListBoxItem Content="D4"/>
-                <ListBoxItem Content="E4"/>
-                <ListBoxItem Content="F4"/>
-                <ListBoxItem Content="G4"/>
-                <ListBoxItem Content="A4"/>
-            </ListBox>
-			<ListBox x:Name="RangeMax" 
-				Background="{StaticResource PhoneChromeBrush}" 
-				FontSize="32" BorderThickness="32,10,0,10" 
-				BorderBrush="{StaticResource PhoneChromeBrush}" 
-				RenderTransformOrigin="0.5,0.5" 
-				SelectionChanged="RangeListMax_SelectionChanged" 
-				FontFamily="Segoe WP Light" 
-				UseLayoutRounding="True" Grid.Column="1" Grid.Row="1" Margin="0,0,0,10" >
+					<ListBoxItem Content="E1"/>
+					<ListBoxItem Content="F1"/>
+					<ListBoxItem Content="G1"/>
+					<ListBoxItem Content="A1"/>
+					<ListBoxItem Content="B1"/>
+					<ListBoxItem Content="C2"/>
+					<ListBoxItem Content="D2"/>
+					<ListBoxItem Content="E2"/>
+					<ListBoxItem Content="F2"/>
+					<ListBoxItem Content="G2"/>
+					<ListBoxItem Content="A2"/>
+					<ListBoxItem Content="B2"/>
+					<ListBoxItem Content="C3"/>
+					<ListBoxItem Content="D3"/>
+					<ListBoxItem Content="E3"/>
+					<ListBoxItem Content="F3"/>
+					<ListBoxItem Content="G3"/>
+					<ListBoxItem Content="A3"/>
+					<ListBoxItem Content="B3"/>
+					<ListBoxItem Content="C4"/>
+					<ListBoxItem Content="D4"/>
+					<ListBoxItem Content="E4"/>
+					<ListBoxItem Content="F4"/>
+					<ListBoxItem Content="G4"/>
+					<ListBoxItem Content="A4"/>
+				</ListBox>
+				<TextBlock TextWrapping="Wrap" Text="Min" Margin="30,15,0,0" FontSize="48"/>
+				<TextBlock TextWrapping="Wrap" Text="Max" Grid.Column="2" Margin="30,15,0,0" FontSize="48"/>
 
-                <ListBoxItem Content="E1"/>
-                <ListBoxItem Content="F1"/>
-                <ListBoxItem Content="G1"/>
-                <ListBoxItem Content="A1"/>
-                <ListBoxItem Content="B1"/>
-                <ListBoxItem Content="C2"/>
-                <ListBoxItem Content="D2"/>
-                <ListBoxItem Content="E2"/>
-                <ListBoxItem Content="F2"/>
-                <ListBoxItem Content="G2"/>
-                <ListBoxItem Content="A2"/>
-                <ListBoxItem Content="B2"/>
-                <ListBoxItem Content="C3"/>
-                <ListBoxItem Content="D3"/>
-                <ListBoxItem Content="E3"/>
-                <ListBoxItem Content="F3"/>
-                <ListBoxItem Content="G3"/>
-                <ListBoxItem Content="A3"/>
-                <ListBoxItem Content="B3"/>
-                <ListBoxItem Content="C4"/>
-                <ListBoxItem Content="D4"/>
-                <ListBoxItem Content="E4"/>
-                <ListBoxItem Content="F4"/>
-                <ListBoxItem Content="G4"/>
-                <ListBoxItem Content="A4"/>
-            </ListBox>
-			<TextBlock TextWrapping="Wrap" Text="Min" Margin="30,15,0,0" FontSize="48"/>
-			<TextBlock TextWrapping="Wrap" Text="Max" Grid.Column="2" Margin="30,15,0,0" FontSize="48"/>
-
-            <Grid.Projection>
-                <PlaneProjection/>
-            </Grid.Projection>
-        </Grid>
+			</Grid>
+		</Grid>
 		<TextBlock HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" Text="CLARINET TRAINING" VerticalAlignment="Top" Width="480" Grid.RowSpan="2"/>
 
 

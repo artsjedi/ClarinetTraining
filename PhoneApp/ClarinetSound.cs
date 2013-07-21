@@ -9,9 +9,12 @@ namespace ClarinetTraining
 {
     class ClarinetSound
     {
+
         SoundEffect effect;
-        public  void playNote(Note n)
+
+        public  void playNote(Note n,int tranpose  = 0)
         {
+            n = n.getTransposed(tranpose);
             n = n.normalize();
             playNote(n.ToString());
         }
