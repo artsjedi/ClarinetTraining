@@ -265,14 +265,14 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" >
             <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem x:Name="Dictionary" IsEnabled="True" Text="Dictionary" Click="Dictionary_Click"  />
+                <shell:ApplicationBarMenuItem x:Name="Dictionary" IsEnabled="True" Text="Notes Dictionary" Click="Dictionary_Click"  />
                 <shell:ApplicationBarMenuItem x:Name="Invert" IsEnabled="True" Text="Invert Instrument" Click="Invert_Click" />
-                <shell:ApplicationBarMenuItem x:Name="SoundOnOff" IsEnabled="True" Text="Invert Instrument" Click="Invert_Click" />
-                <shell:ApplicationBarMenuItem x:Name="hideNote" IsEnabled="True" Text="toggle Note Name" Click="NoteName_Tap" />
+                <shell:ApplicationBarMenuItem x:Name="SoundOnOff" IsEnabled="True" Text="Sound On/Off" Click="Invert_Click" />
+                <shell:ApplicationBarMenuItem x:Name="hideNote" IsEnabled="True" Text="Note Name On/Off" Click="NoteName_Tap" />
                 <shell:ApplicationBarMenuItem x:Name="Help" IsEnabled="True" Text="Help" Click="Help_Click" />
                 <shell:ApplicationBarMenuItem x:Name="About" IsEnabled="True" Text="About" Click="About_Click"  />
             </shell:ApplicationBar.MenuItems>
-            <shell:ApplicationBarIconButton x:Name="VoiceListButton" IconUri="/Assets/AppBar/Tunning.png" IsEnabled="True" Text="Tunning" Click="VoiceList_Click" />
+            <shell:ApplicationBarIconButton x:Name="VoiceListButton" IconUri="/Assets/AppBar/Tunning.png" IsEnabled="True" Text="Transpose" Click="VoiceList_Click" />
             <shell:ApplicationBarIconButton x:Name="ScaleButton" IconUri="/Assets/AppBar/appbar.phone.numbersign.rest.png" IsEnabled="True" Text="Scale" Click="ScaleButton_Click" />
             <shell:ApplicationBarIconButton x:Name="IntervalButton" IconUri="/Assets/AppBar/appbar.time.rest.png" IsEnabled="True" Text="Interval" Click="IntervalButton_Click" />
             <shell:ApplicationBarIconButton x:Name="RangeButton" IconUri="/Assets/AppBar/range.png" IsEnabled="True" Text="Range" Click="RangeButton_Click" />

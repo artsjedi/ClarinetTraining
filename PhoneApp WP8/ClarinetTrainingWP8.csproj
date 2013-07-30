@@ -159,6 +159,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\PhoneApp\Assets\AppBar\Tunning.png">
+      <Link>Assets\AppBar\Tunning.png</Link>
+    </Content>
     <Content Include="..\PhoneApp\SplashScreenImage.jpg">
       <Link>SplashScreenImage.jpg</Link>
     </Content>
@@ -230,6 +233,7 @@
     <Content Include="Assets\Sounds\B4.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Sounds\C#1.wav" />
     <Content Include="Assets\Sounds\C#2.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -239,6 +243,7 @@
     <Content Include="Assets\Sounds\C#4.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Sounds\C1.wav" />
     <Content Include="Assets\Sounds\C2.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
