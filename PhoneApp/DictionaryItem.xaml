@@ -74,7 +74,7 @@
     			<Path x:Name="PlaySymbol" Data="F1M169.3398,66.1689L138.9708,91.6839L138.9708,40.6529z" Fill="{StaticResource PhoneForegroundBrush}" Stretch="Fill" UseLayoutRounding="False" Height="36.698" Canvas.Left="10" Width="21.839" Canvas.Top="4.302" />
     		</Canvas>
     	</Button>
-    	<Rectangle Fill="{StaticResource PhoneBorderBrush}" HorizontalAlignment="Left" Height="800" Margin="0,-3,0,0" VerticalAlignment="Top" Width="2"/>
+    	<Rectangle Fill="{StaticResource PhoneBorderBrush}" HorizontalAlignment="Left" Height="800" Margin="0,-3,0,0" VerticalAlignment="Top" Width="2" Visibility="Collapsed"/>
         <TextBlock x:Name="NoteName" TextWrapping="Wrap" FontSize="40" Margin="10,231,88,491" Text="Note" TextAlignment="Center"/>
 
     </Grid>

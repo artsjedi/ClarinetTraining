@@ -42,6 +42,16 @@ namespace ClarinetTraining
 
         private Random rnd = new Random();
 
+
+        //trial check
+        private bool formLoaded = false;
+        private bool unlocked = false;
+        
+#if DEBUG
+        private bool trialfake = true;
+#endif
+
+
         public MainPage()
         {
             
@@ -77,6 +87,8 @@ namespace ClarinetTraining
             loadCondiguration();
 
             verifyFirstTime();
+
+            formLoaded = true;
         }
 
         private void setNameVisibility(bool visible)
@@ -402,6 +414,7 @@ namespace ClarinetTraining
 
         private void ScaleList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
+            if (trialVerify()) return;
 
             var i = (sender as ListBox).SelectedIndex;
             setScale(i);
@@ -414,6 +427,8 @@ namespace ClarinetTraining
 
         private void RangeListMin_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
+            if (trialVerify()) return;
+
             var listIndex = (sender as ListBox).SelectedIndex;
             //hideLists();
 
@@ -439,6 +454,8 @@ namespace ClarinetTraining
 
         private void RangeListMax_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
+
+            if (trialVerify()) return;
 
             var listIndex = (sender as ListBox).SelectedIndex;
 			//hideLists();
@@ -539,5 +556,31 @@ namespace ClarinetTraining
 
         #endregion
 
+        private bool trialVerify()
+        {
+            if (!formLoaded) return false;
+            //verify license
+            Microsoft.Phone.Marketplace.LicenseInformation li = new Microsoft.Phone.Marketplace.LicenseInformation();
+
+            var isTrial = true;
+            
+            #if DEBUG
+            isTrial = true;
+            #else
+            IsolatedStorageSettings.ApplicationSettings["nameVisibility"] = currentNameVisibility;
+            isTrial = li.IsTrial();
+            #endif
+
+
+            if (isTrial)
+            {
+                var m = MessageBox.Show("This settings is only avaliable in full version. Would you like to purchase the full version?", "Trial Version", MessageBoxButton.OKCancel);
+                if (m == MessageBoxResult.OK)
+                    new Microsoft.Phone.Tasks.MarketplaceDetailTask().Show();
+                return true;
+            }
+            return false;
+
+        }
     }
 }

@@ -4,9 +4,11 @@
   <Languages xmlns="">
     <Language code="en" />
   </Languages>
-  <App xmlns="" ProductID="{c09c82fa-4736-4cbe-a26c-95b7a5459535}" Title="Clarinet Training" RuntimeType="Silverlight" Version="1.0.7.0" Genre="apps.normal" Author="ClarinetTraining author" Description="Apllication for training notes on Clarinet" Publisher="ClarinetTraining" BitsPerPixel="16" PublisherID="{cef3bdd7-7ca0-4b34-98ba-e642d13f5649}">
+  <App xmlns="" ProductID="{c09c82fa-4736-4cbe-a26c-95b7a5459535}" Title="Clarinet Practice" RuntimeType="Silverlight" Version="1.0.8.0" Genre="apps.normal" Author="ClarinetTraining author" Description="Apllication for training notes on Clarinet" Publisher="ClarinetTraining" BitsPerPixel="16" PublisherID="{cef3bdd7-7ca0-4b34-98ba-e642d13f5649}">
     <IconPath IsRelative="true" IsResource="false">100.png</IconPath>
     <Capabilities>
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+      <Capability Name="ID_CAP_NETWORKING" />
     </Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
@@ -14,19 +16,24 @@
     <Tokens>
       <PrimaryToken TokenID="ClarinetTrainingToken" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsResource="false" IsRelative="true">159.png</SmallImageURI>
+          <SmallImageURI IsRelative="true" IsResource="false">159.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsResource="false" IsRelative="true">336.png</BackgroundImageURI>
-          <Title>Clarinet Training</Title>
+          <BackgroundImageURI IsRelative="true" IsResource="false">336.png</BackgroundImageURI>
+          <Title>
+          </Title>
           <BackContent>
           </BackContent>
-          <BackBackgroundImageURI>
+          <BackBackgroundImageURI IsRelative="true" IsResource="false">
           </BackBackgroundImageURI>
           <BackTitle>
           </BackTitle>
-          <DeviceLockImageURI>
+          <LargeBackgroundImageURI IsRelative="true" IsResource="false">iconLarge.png</LargeBackgroundImageURI>
+          <LargeBackContent />
+          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
+          </LargeBackBackgroundImageURI>
+          <DeviceLockImageURI IsRelative="true" IsResource="false">
           </DeviceLockImageURI>
-          <HasLarge>false</HasLarge>
+          <HasLarge>True</HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>

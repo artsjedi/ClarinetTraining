@@ -333,7 +333,7 @@
 
         </Grid>
 		<Grid x:Name="Menus" Margin="0,122,0,0" Grid.Row="2">
-			<Rectangle x:Name="listsBackground" Fill="{StaticResource PhoneSemitransparentBrush}" Stroke="Black" Tap="listsBackground_Tap" d:IsHidden="True" Margin="0,0,0,-216" />
+			<Rectangle x:Name="listsBackground" Fill="{StaticResource PhoneSemitransparentBrush}" Stroke="Black" Tap="listsBackground_Tap" Margin="0,-271,0,-72" />
 			<ListBox x:Name="VoiceList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="VoiceList_SelectionChanged" Width="480" HorizontalAlignment="Right" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" Visibility="Collapsed" >
 				<ListBox.Projection>
 					<PlaneProjection/>
@@ -458,7 +458,7 @@
 
 			</Grid>
 		</Grid>
-		<TextBlock HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" Text="CLARINET TRAINING" VerticalAlignment="Top" Width="480" Grid.RowSpan="2"/>
+		<TextBlock HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" Text="CLARINET TRAINING" VerticalAlignment="Top" Width="470" Grid.RowSpan="2" Margin="10,0,0,0"/>
 
 
     </Grid>

@@ -350,6 +350,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\tutorial\tutorial-02w.jpg" />
+    <Content Include="iconLarge.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AppBar\sound on.png">
