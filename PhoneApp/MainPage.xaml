@@ -472,7 +472,7 @@
 				<CompositeTransform ScaleY="-1"/>
 			</Rectangle.RenderTransform>
 		</Rectangle>
-		<TextBlock HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" Foreground="White">
+		<TextBlock HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Center" Width="470" Foreground="White" Margin="10,0,0,0">
 			<Run Text="CLARINET "/>
 			<Run Text="PRACTICE"/>
 		</TextBlock>
