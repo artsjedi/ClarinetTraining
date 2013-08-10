@@ -340,7 +340,7 @@ namespace ClarinetTraining
 
         private void ScaleButton_Click(object sender, System.EventArgs e)
         {
-            ApplicationBar.IsVisible = false;
+            ///ApplicationBar.IsVisible = false;
             listsBackground.Visibility = System.Windows.Visibility.Visible;
 			ScaleList.Visibility = System.Windows.Visibility.Visible;
             IntervalList.Visibility = System.Windows.Visibility.Collapsed;
@@ -353,7 +353,7 @@ namespace ClarinetTraining
 
         private void IntervalButton_Click(object sender, System.EventArgs e)
         {
-            ApplicationBar.IsVisible = false;
+            ///ApplicationBar.IsVisible = false;
             listsBackground.Visibility = System.Windows.Visibility.Visible;
 			ScaleList.Visibility = System.Windows.Visibility.Collapsed;
             RangeList.Visibility = System.Windows.Visibility.Collapsed;
@@ -364,7 +364,7 @@ namespace ClarinetTraining
 
         private void RangeButton_Click(object sender, System.EventArgs e)
         {
-            ApplicationBar.IsVisible = false;
+            ///ApplicationBar.IsVisible = false;
             listsBackground.Visibility = System.Windows.Visibility.Visible;
             ScaleList.Visibility = System.Windows.Visibility.Collapsed;
             RangeList.Visibility = System.Windows.Visibility.Visible;
@@ -375,7 +375,7 @@ namespace ClarinetTraining
 
         private void VoiceList_Click(object sender, System.EventArgs e)
         {
-            ApplicationBar.IsVisible = false;
+            ///ApplicationBar.IsVisible = false;
             listsBackground.Visibility = System.Windows.Visibility.Visible;
             ScaleList.Visibility = System.Windows.Visibility.Collapsed;
             RangeList.Visibility = System.Windows.Visibility.Collapsed;
@@ -483,7 +483,8 @@ namespace ClarinetTraining
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
 
-            if( ApplicationBar.IsVisible == false){
+            if (listsBackground.Visibility == System.Windows.Visibility.Visible)
+            {
                 hideLists();
                 e.Cancel = true;
             }

@@ -51,6 +51,9 @@ namespace ClarinetTraining
 
             // Phone-specific initialization
             InitializePhoneApplication();
+
+
+            (Resources["PhoneAccentBrush"] as SolidColorBrush).Color = Color.FromArgb(255, 210, 40, 45);
         }
 
         // Code to execute when the application is launching (eg, from Start)

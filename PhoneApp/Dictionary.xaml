@@ -13,6 +13,12 @@
     shell:SystemTray.IsVisible="True">
     
 	<phone:PhoneApplicationPage.Resources>
+		
+		<ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ResourceDictionary1.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
 		<DataTemplate x:Key="DictionaryTemplate">
 			<Grid>
 				<Grid HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="480">
@@ -26,6 +32,8 @@
 				</Grid>
 			</Grid>
 		</DataTemplate>
+		</ResourceDictionary>
+
 	</phone:PhoneApplicationPage.Resources>
 
 	<phone:PhoneApplicationPage.FontFamily>
@@ -45,9 +53,15 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
     	<local:DictionaryItem x:Name="DictionaryItem" HorizontalAlignment="Left" Height="768" Margin="234,0,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="236"/>
-    	<ListBox x:Name="NotesList" HorizontalAlignment="Left" 
-		Height="758" Margin="48,0,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="186" SelectionChanged="NotesList_SelectionChanged" FontSize="21.333">
+    	
+		<ListBox 
+		x:Name="NotesList" 
+		HorizontalAlignment="Left" 
+		Height="758" Margin="48,0,0,0" Grid.RowSpan="2"
+		VerticalAlignment="Top" Width="186"
+		SelectionChanged="NotesList_SelectionChanged" >
     		<ListBox.Resources>
+    			
     			<DataTemplate x:Key="DictionaryNoteName">
     				<Grid Height="68">
     					<TextBlock Text="{Binding}" FontSize="32"/>

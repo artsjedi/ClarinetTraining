@@ -407,6 +407,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <ApplicationDefinition Include="..\PhoneApp\ResourceDictionary1.xaml">
+      <Link>ResourceDictionary1.xaml</Link>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
     <Page Include="..\PhoneApp\sheet.xaml">
       <Link>sheet.xaml</Link>
       <Generator>MSBuild:MarkupCompilePass1</Generator>
@@ -415,6 +420,10 @@
     <Page Include="..\PhoneApp\WindowsPhoneControl1.xaml">
       <Link>WindowsPhoneControl1.xaml</Link>
       <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DesignTimeResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
