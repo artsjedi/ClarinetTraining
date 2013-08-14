@@ -323,7 +323,7 @@
             </Button>
             <Button x:Name="Sound" HorizontalAlignment="Left" Height="65" VerticalAlignment="Top" Width="65" Background="{x:Null}" Style="{StaticResource RoundButton}" BorderThickness="2" Padding="3" Click="SoundOnOffClick" Grid.Row="1" Margin="0,43,0,0" >
             	<Grid Height="39" Width="39" VerticalAlignment="Center" HorizontalAlignment="Center">
-            		<Rectangle x:Name="soundOnIcon" Fill="#FFF4F4F5" Height="39" Width="39" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.99">
+            		<Rectangle x:Name="soundOnIcon" Fill="{StaticResource PhoneForegroundBrush}" Height="39" Width="39" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.99">
             			<Rectangle.OpacityMask>
             				<ImageBrush Stretch="Uniform" ImageSource="/Assets/AppBar/sound on.png"/>
             			</Rectangle.OpacityMask>
@@ -343,9 +343,9 @@
             </Rectangle>
 
         </Grid>
-		<Grid x:Name="Menus" Margin="0,122,0,0" Grid.Row="2" d:IsHidden="True">
-			<Rectangle x:Name="listsBackground" Fill="{StaticResource PhoneSemitransparentBrush}" Stroke="Black" Tap="listsBackground_Tap" Margin="0,-271,0,-72" d:IsHidden="True" />
-			<ListBox x:Name="VoiceList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="VoiceList_SelectionChanged" Width="480" HorizontalAlignment="Right" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" Visibility="Collapsed" >
+		<Grid x:Name="Menus" Margin="0,4,0,0" Grid.Row="1" Grid.RowSpan="2">
+			<Rectangle x:Name="listsBackground" Fill="{StaticResource PhoneSemitransparentBrush}" Stroke="Black" Tap="listsBackground_Tap" Margin="0" />
+			<ListBox x:Name="VoiceList" Height="447" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="VoiceList_SelectionChanged" Width="480" HorizontalAlignment="Right" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" >
 				<ListBox.Projection>
 					<PlaneProjection/>
 				</ListBox.Projection>
@@ -353,7 +353,7 @@
 				<ListBoxItem Content="Bb" Padding="0,15,0,0"  />
 				<ListBoxItem Content="Eb" Padding="0,15,0,0"  />
 			</ListBox>
-			<ListBox x:Name="ScaleList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="ScaleList_SelectionChanged" Width="480" HorizontalAlignment="Right" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" Visibility="Collapsed" >
+			<ListBox x:Name="ScaleList" Height="447" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="ScaleList_SelectionChanged" Width="480" HorizontalAlignment="Right" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" Visibility="Collapsed" >
 				<ListBox.Projection>
 					<PlaneProjection/>
 				</ListBox.Projection>
@@ -366,7 +366,7 @@
 				<ListBoxItem Content="B Maj" Padding="0,15,0,0"  />
 				<ListBoxItem Content="All  " Padding="0,15,0,0"  />
 			</ListBox>
-			<ListBox x:Name="IntervalList" Height="480" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="IntervalList_SelectionChanged" Width="480" HorizontalAlignment="Right" Visibility="Collapsed" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" >
+			<ListBox x:Name="IntervalList" Height="447" VerticalAlignment="Bottom" Background="{StaticResource PhoneChromeBrush}" FontSize="32" BorderThickness="32,10,0,10" BorderBrush="{StaticResource PhoneChromeBrush}" RenderTransformOrigin="0.5,0.5" SelectionChanged="IntervalList_SelectionChanged" Width="480" HorizontalAlignment="Right" Visibility="Collapsed" FontFamily="Segoe WP Light" UseLayoutRounding="True" FlowDirection="LeftToRight" >
 				<ListBox.Projection>
 					<PlaneProjection/>
 				</ListBox.Projection>
@@ -382,7 +382,7 @@
 				<ListBoxItem Content="30 s" Padding="0,15,0,0"   />
 
 			</ListBox>
-			<Grid  x:Name="RangeList"  Height="480" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="480" Background="{StaticResource PhoneChromeBrush}" Visibility="Collapsed" >
+			<Grid  x:Name="RangeList"  Height="447" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="480" Background="{StaticResource PhoneChromeBrush}" Visibility="Collapsed" >
 				<Grid.RowDefinitions>
 					<RowDefinition Height="7*"/>
 					<RowDefinition Height="33*"/>

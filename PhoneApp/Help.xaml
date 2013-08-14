@@ -37,7 +37,7 @@
         </Image>
         
         <Image x:Name="image2d" Source="/Assets/tutorial/tutorial-02.jpg" Tap="Image_Tap_2"   />
-        <Image x:Name="image1d" Source="/Assets/tutorial/tutorial-01.jpg" Tap="Image_Tap_1"   RenderTransformOrigin="0.5,0.5" >
+        <Image x:Name="image1d" Source="/Assets/tutorial/tutorial-01.jpg" Tap="Image_Tap_1"   RenderTransformOrigin="0.5,0.5" Width="480" >
             <Image.RenderTransform>
                 <CompositeTransform/>
             </Image.RenderTransform>
