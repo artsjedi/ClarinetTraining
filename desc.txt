@@ -1,0 +1,20 @@
+"Clarinet Practive" is an excellent App for you to train your ability with an clarinet.
+
+1. The application shows a random note in the score
+2. The app shows the correct fingering on the clarinet
+3. The musician plays the corresponding note.
+4. The application plays the sound of the note to train your ear.
+
+Features:
+- Shows notes in musical sheet
+- Shows Clarinet fingering for each note.
+- Train your typing on the clarinet
+- Play clarinet notes Sounds
+- Notes dictionary
+- Select a musical scale
+- Select clarinet tranpose (Bb Eb C)
+- Select notes range
+- Select the time interval between each note
+- Set the rotation Clarinet
+- Displays the notes name on musical sheet
+- Responsive
